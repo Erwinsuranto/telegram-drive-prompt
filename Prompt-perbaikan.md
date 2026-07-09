@@ -1,3 +1,43 @@
+# Prompt: Gabungkan Detail Upload Menjadi Caption Foto
+
+```
+Project: Telegram Drive
+
+Ubah tampilan hasil upload.
+
+Saat user mengirim foto:
+- Jangan kirim foto lalu kirim pesan teks terpisah.
+- Kirim SATU pesan saja berupa foto dengan caption.
+
+Format caption:
+
+✅ Upload Berhasil
+
+📷 Photo
+👤 Pengguna : digitalcel
+📦 Ukuran : 112.22 KB
+🆔 ID : 6a4f510...
+🕒 Upload : 09 Jul 2026 • 14:43 WIB
+
+━━━━━━━━━━━━━━
+
+🔗 Download
+https://domain.com/download/xxxxxxxx
+
+✨ File berhasil disimpan di Telegram Drive.
+
+Aturan:
+- Foto harus menjadi preview utama.
+- Semua informasi berada di caption.
+- Jangan tampilkan nama file acak Telegram.
+- Gunakan caption maksimal ±15 baris agar tidak terlalu panjang.
+- Berlaku juga untuk Video (caption pada video), Document (caption pada dokumen), Audio (caption pada audio), dan Voice.
+- Jangan mengubah proses upload atau penyimpanan database, hanya ubah cara bot mengirim hasil upload.
+
+
+```
+
+
 
 # Prompt: Perbaiki Upload ke Channel Database
 
