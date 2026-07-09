@@ -1,3 +1,29 @@
+# Prompt: Hapus Duplikasi Gambar Upload
+```
+Project: Telegram Drive
+
+Masalah:
+
+Saat user mengupload foto, bot mengirim foto dua kali.
+
+Yang diinginkan:
+
+- Hanya kirim SATU foto.
+- Semua informasi (nama file, ukuran, jenis, link download, waktu upload) menjadi caption pada foto tersebut.
+- Jangan kirim foto kedua.
+- Jangan kirim pesan teks terpisah.
+
+Audit seluruh alur upload dan pastikan hanya ada satu pemanggilan sendPhoto() untuk balasan ke user.
+
+Jika foto juga harus dikirim ke Channel Database, lakukan secara terpisah tanpa mengirim ulang foto ke chat user.
+
+Hasil akhir:
+- User menerima 1 foto + caption.
+- Channel Database menerima 1 foto.
+- Tidak ada duplikasi di chat user.
+
+```
+
 # Prompt: Perbaiki CSS Landing Page
 
 ```
