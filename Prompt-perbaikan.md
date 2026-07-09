@@ -1,3 +1,53 @@
+
+# Prompt: Tambahkan Tombol Start Telegram Bot
+```
+Project: Telegram Drive
+
+Tambahkan persistent menu (Telegram Bot Commands/Menu Button).
+
+Menu yang diinginkan:
+
+🚀 Mulai Telegram Drive
+Command:
+/start
+
+📂 File Saya
+Command:
+/myfiles
+
+📤 Upload File
+Command:
+/upload
+
+🔍 Cari File
+Command:
+/search
+
+⭐ Favorit
+Command:
+/favorites
+
+🗑️ Sampah
+Command:
+/trash
+
+👤 Profil Saya
+Command:
+/profile
+
+❓ Bantuan
+Command:
+/help
+
+Aturan:
+- Gunakan Telegram Bot API setMyCommands agar menu muncul di ikon Menu Telegram.
+- Saat pengguna menekan "🚀 Mulai Telegram Drive", jalankan command /start.
+- Jangan mengubah fungsi command yang sudah ada.
+- Jika command belum dibuat, cukup tampilkan pesan "Fitur sedang dikembangkan."
+- Pastikan menu otomatis diperbarui setiap bot dijalankan.
+
+
+```
 # Prompt: Perbaiki Tampilan Pesan Upload Telegram Bot
 ```
 Project: Telegram Drive
