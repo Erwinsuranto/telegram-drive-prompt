@@ -1,3 +1,32 @@
+# Judul: Fix Server Crash After npm start
+```
+Project Telegram Drive.
+
+Problem:
+The application starts, connects to MongoDB, initializes the Telegram bot, then exits before Express begins listening.
+
+Evidence:
+- curl http://localhost:3000/health -> connection refused
+- ss -tulpn | grep 3000 -> no process listening
+- npm start exits unexpectedly after initialization.
+
+Task:
+1. Find the exact reason Node exits.
+2. Check for process.exit(), uncaught exception, rejected promise, or server.close().
+3. Add complete startup logging.
+4. Ensure app.listen() is reached and keeps the process alive.
+5. Do not refactor unrelated code.
+6. Only modify the files required to keep the HTTP server running.
+
+Output:
+- Explain the root cause.
+- Show changed files.
+- Keep the fix minimal.
+
+
+```
+
+
 # Prompt: Hapus Duplikasi Gambar Upload
 ```
 Project: Telegram Drive
