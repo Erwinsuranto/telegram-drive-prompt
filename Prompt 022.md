@@ -78,4 +78,28 @@ Jika semua fitur di atas ternyata sudah tersedia, jangan mengubah kode apa pun. 
 Jika masih ada fitur yang belum tersedia atau belum sempurna, lanjutkan implementasinya hingga selesai, kemudian lakukan self-test sebelum memberikan status COMPLETE.
 
 ```
+```
+
+Tahap ke-22
+
+Periksa apakah Delete System sudah memiliki:
+
+- Recycle Bin
+- Restore File
+- Restore Folder
+- Permanent Delete
+- Auto Delete setelah X hari
+- Empty Trash
+- Bulk Restore
+- Bulk Delete
+
+Jika suatu fitur sudah ada dan berfungsi, jangan diubah.
+
+Jika belum ada atau belum lengkap, tambahkan dan integrasikan dengan sistem yang sudah ada.
+
+Jangan mengubah fitur lain.
+Jangan membuat file .md.
+Lakukan self-test sebelum selesai.
+```
+
 
