@@ -1,3 +1,31 @@
+# Prompt: Perbaiki CSS Landing Page
+
+```
+
+Project: Telegram Drive
+
+Masalah:
+
+Landing page masih tampil sebagai HTML polos.
+Semua CSS tidak diterapkan walaupun file /css/styles.css bisa diakses langsung.
+
+Tugas:
+
+1. Audit mengapa CSS tidak diterapkan pada halaman index.html.
+2. Pastikan <link rel="stylesheet" href="/css/styles.css"> benar-benar dimuat oleh browser.
+3. Periksa apakah Express static middleware mengarah ke folder public.
+4. Periksa Content-Type, CSP, path relatif, dan middleware yang mungkin mengganggu.
+5. Pastikan setelah server dijalankan, halaman utama tampil dengan desain modern (bukan HTML polos).
+
+Jangan mengubah desain website.
+Jangan membuat CSS baru.
+Fokus hanya memperbaiki penyebab CSS tidak diterapkan.
+
+```
+
+
+
+
 # Prompt: Gabungkan Detail Upload Menjadi Caption Foto
 
 ```
