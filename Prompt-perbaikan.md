@@ -1,4 +1,31 @@
 
+# Prompt: Perbaiki Upload ke Channel Database
+
+```
+Project: Telegram Drive
+
+Masalah saat ini:
+
+- User mengirim file ke bot.
+- Bot menerima file.
+- Metadata tersimpan ke database.
+- Tetapi file tidak pernah masuk ke Telegram Channel Database.
+
+Tugas:
+
+1. Audit alur upload file.
+2. Pastikan setiap file yang diterima bot dikirim ke CHANNEL_DATABASE menggunakan bot.sendDocument(), bot.sendPhoto(), bot.sendVideo(), bot.sendAudio(), atau bot.sendVoice() sesuai jenis file.
+3. Simpan message_id dan file_id dari channel ke database.
+4. Jika gagal upload ke channel, tampilkan error yang jelas di log.
+5. Jangan mengubah fitur lain.
+
+Cari penyebab mengapa file berhenti sebelum dikirim ke channel dan perbaiki sampai file benar-benar muncul di channel database.
+
+
+```
+
+
+
 # Prompt: Tambahkan Tombol Start Telegram Bot
 ```
 Project: Telegram Drive
