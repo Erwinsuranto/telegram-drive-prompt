@@ -1,4 +1,41 @@
 # Judul: Fix Server Crash After npm start
+
+```
+
+Website frontend is still rendering as plain HTML.
+
+Symptoms:
+- CSS design is not applied.
+- Navbar shows bullet lists.
+- Hero section has no layout.
+- Buttons are plain blue links.
+- Browser displays raw HTML styling.
+
+Do NOT redesign the UI.
+
+Only find why the frontend assets are not loading.
+
+Tasks:
+1. Verify Express static middleware.
+2. Verify public/index.html references.
+3. Verify CSS and JS paths.
+4. Verify browser receives the correct files.
+5. Verify no old HTML is being served.
+6. Fix the root cause only.
+
+Do not modify Telegram Bot.
+Do not modify backend upload logic.
+
+Return:
+- Root cause.
+- Files changed.
+- Why the design was not loading.
+
+```
+
+
+
+# Judul: Fix Server Crash After npm start
 ```
 Project Telegram Drive.
 
