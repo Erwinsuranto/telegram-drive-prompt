@@ -9,7 +9,7 @@
 
 
 
-#Prompt 1 – Tombol "Open File" salah (Prioritas 1)
+# Prompt 1 – Tombol "Open File" salah (Prioritas 1)
 ```
 
 
