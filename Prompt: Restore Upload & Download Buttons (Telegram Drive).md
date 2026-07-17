@@ -10,6 +10,83 @@
 
 
 
+# 
+```
+
+
+Perbaiki UX halaman My Files agar mengikuti pola Google Drive dan MEGA.
+
+Saat ini perilakunya salah.
+
+Yang diinginkan:
+
+1. Klik nama file, thumbnail, atau seluruh area file
+- Jangan membuka panel informasi.
+- Langsung buka halaman Preview File.
+- Jika gambar:
+  tampilkan image viewer.
+- Jika video:
+  tampilkan video player.
+- Jika PDF:
+  tampilkan PDF viewer.
+- Jika audio:
+  tampilkan audio player.
+- Jika file lain:
+  tampilkan halaman detail dengan ikon file.
+
+Halaman preview harus memiliki tombol:
+- Download
+- Copy Link
+- Share
+- Informasi File
+
+2. Tombol titik tiga (⋮)
+JANGAN membuka panel informasi seperti sekarang.
+
+Harus membuka Action Menu seperti Google Drive atau MEGA.
+
+Isi menu:
+
+• Preview / Open
+• Download
+• Copy Link
+• Share
+• Rename (admin)
+• Move
+• Delete (admin)
+• Favorite
+• Detail / Properties
+
+Menu ditampilkan sebagai bottom sheet atau popup menu.
+
+3. Pisahkan Preview dan Action Menu.
+
+Preview adalah halaman untuk membuka isi file.
+
+Action Menu hanya berisi aksi terhadap file.
+
+Jangan mencampur keduanya.
+
+4. Panel informasi yang sekarang muncul dari bawah dihapus.
+
+Informasi file dipindahkan ke menu:
+Detail / Properties.
+
+5. Semua tombol harus berfungsi:
+- Preview
+- Download
+- Copy Link
+- Share
+- Detail
+
+6. Pastikan seluruh perilaku bekerja baik di desktop maupun mobile.
+
+Jangan mengubah desain Telegram Drive selain memperbaiki alur interaksi ini.
+
+
+
+```
+
 # Prompt 2 - Tombol Download tidak berfungsi
 ```
 
