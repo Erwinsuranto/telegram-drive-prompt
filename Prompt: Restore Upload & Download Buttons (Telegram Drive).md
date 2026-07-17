@@ -9,6 +9,95 @@
 
 
 
+#Prompt 1 – Tombol "Open File" salah (Prioritas 1)
+```
+
+
+Perbaiki fitur "Open File" setelah upload berhasil.
+
+Masalah saat ini:
+- Setelah upload selesai, tombol "Open File" langsung mengunduh file.
+- Seharusnya tombol ini membuka halaman preview/detail file, bukan langsung mengunduh.
+
+Yang diinginkan:
+1. Tombol "Open File" membuka halaman detail file menggunakan downloadToken atau fileId.
+2. Halaman tersebut menampilkan:
+   - Nama file
+   - Ukuran file
+   - Tanggal upload
+   - Preview (jika gambar/video/PDF)
+   - Tombol Download
+   - Tombol Copy Link
+   - Informasi file
+3. File hanya diunduh jika pengguna menekan tombol Download.
+4. Jangan mengubah alur upload yang sudah berjalan.
+5. Pastikan link yang dibuka menggunakan downloadToken yang sama dengan database.
+
+
+
+```
+# Prompt 2 – Tombol "Copy Link" tidak berfungsi (Prioritas 2)
+
+```
+
+Perbaiki tombol "Copy Link".
+
+Masalah:
+- Tombol dapat ditekan tetapi tidak menyalin apa pun ke clipboard.
+
+Yang diinginkan:
+1. Tombol harus menyalin link download lengkap.
+2. Contoh:
+http://domain/download/{downloadToken}
+
+3. Setelah berhasil:
+- tampilkan toast:
+"Link berhasil disalin."
+
+4. Jika clipboard gagal:
+- tampilkan pesan error yang jelas.
+
+5. Jangan mengubah tampilan tombol.
+6. Pastikan link yang disalin sama dengan link yang digunakan halaman download
+
+
+
+
+
+
+```
+# Prompt 3 – Pisahkan halaman Upload dan Download (Prioritas 3)
+```
+
+
+Pisahkan halaman Upload dan halaman Download.
+
+Masalah saat ini:
+Halaman Upload masih menampilkan form Download sehingga pengguna bingung.
+
+Yang diinginkan:
+
+Halaman Upload (/upload):
+- Hanya berisi fitur upload.
+- Daftar upload.
+- Progress upload.
+- Hasil upload.
+- Tidak boleh ada form download.
+
+Halaman Download (/download):
+- Halaman khusus download.
+- Memiliki input downloadToken atau link.
+- Jika pengguna menempel link atau token lalu menekan Download, langsung diarahkan ke halaman detail file.
+- Halaman detail menampilkan preview file, informasi file, dan tombol Download.
+
+Pastikan:
+- Upload dan Download menjadi dua halaman yang benar-benar terpisah.
+- Semua route lama tetap kompatibel.
+- Jangan mengubah desain yang sudah ada.
+
+
+
+```
 
 
 #
