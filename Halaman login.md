@@ -11,6 +11,156 @@
 
 
 
+# 
+```
+
+# Prompt: Build Professional File Details & Preview Page
+
+Tujuan:
+Buat halaman Detail File yang profesional seperti Google Drive, MEGA, atau Dropbox. Halaman ini akan menjadi pusat informasi setiap file yang dipilih dari halaman My Files dan harus siap digunakan oleh file yang berasal dari Website maupun Telegram Downloader Bot.
+
+## Navigasi
+
+- Saat user menekan file di My Files, buka halaman Detail File.
+- Gunakan routing dinamis berdasarkan fileId.
+- Jangan menggunakan data dummy.
+- Ambil seluruh data melalui API/service yang sudah ada.
+
+## Header
+
+Tampilkan:
+- Tombol Back.
+- Nama file.
+- Tombol More (⋮).
+
+## Preview
+
+Preview otomatis berdasarkan tipe file.
+
+Image
+- Preview penuh.
+- Zoom.
+- Fullscreen.
+
+Video
+- Video player.
+- Play/Pause.
+- Seek.
+- Fullscreen.
+
+Audio
+- Audio player.
+- Cover jika tersedia.
+- Progress bar.
+
+PDF
+- Embedded PDF Viewer.
+
+Dokumen lain
+- Icon sesuai tipe file.
+- Informasi file.
+
+## Informasi File
+
+Tampilkan:
+
+- Nama File
+- Ukuran
+- MIME Type
+- Folder
+- Owner
+- Upload Date
+- Last Modified
+- Download Count
+- Telegram Message ID (hidden developer field)
+- File Status
+
+## Action Buttons
+
+Primary
+
+- Download
+
+Secondary
+
+- Share
+- Copy Link
+- Favorite / Unfavorite
+- Rename
+- Move
+- Delete
+
+## Share
+
+Siapkan UI untuk:
+
+- Copy Link
+- Share Public
+- Share Private
+- Expired Link (coming soon)
+
+## Preview Error
+
+Jika preview gagal:
+
+- tampilkan icon file
+- tampilkan pesan
+- tombol Download tetap tersedia
+
+## Loading
+
+Gunakan Skeleton Loading.
+
+## Error
+
+Jika file tidak ditemukan:
+
+- tampilkan halaman File Not Found
+- tombol Back
+- tombol My Files
+
+## Mobile
+
+Gunakan Bottom Sheet untuk menu.
+
+Desktop gunakan Right Information Panel.
+
+## API
+
+Gunakan service layer yang sudah ada.
+
+Jangan hardcode data.
+
+Semua data berasal dari API.
+
+## Arsitektur
+
+Pisahkan:
+
+- UI
+- Components
+- Hooks
+- API
+- Types
+
+## Persiapan Integrasi Telegram Downloader Bot
+
+Halaman ini harus langsung kompatibel dengan file yang berasal dari:
+
+- Upload Website
+- Upload Telegram Bot
+- Telegram Downloader Bot
+
+Tanpa perlu perubahan UI ketika integrasi selesai.
+
+## Target
+
+Halaman Detail File menjadi halaman utama untuk melihat preview, informasi, dan mengelola setiap file di Telegram Drive dengan tampilan modern, cepat, responsif, dan siap terintegrasi penuh dengan Telegram Downloader Bot.
+
+
+
+
+```
 
 
 # Prompt AI A - Tahap Berikutnya Prompt: Sempurnakan Halaman My Files
