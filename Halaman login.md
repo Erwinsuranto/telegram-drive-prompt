@@ -12,6 +12,41 @@
 # Prompt: Perbaiki autentikasi Telegram Drive
 ```
 
+
+Masalah:
+
+Setelah login berhasil, di drawer/menu masih muncul DUA tombol "Masuk" yang identik.
+
+Ini bukan karena menu guest dan user tampil bersamaan, tetapi karena komponen tombol "Masuk" dirender dua kali.
+
+Perbaiki sebagai berikut:
+
+1. Cari semua komponen yang merender tombol "Masuk".
+2. Pastikan hanya ada SATU tombol "Masuk" pada kondisi user belum login.
+3. Jangan pernah merender tombol "Masuk" dua kali, baik di mobile maupun desktop.
+4. Periksa apakah:
+   - DrawerMenu dan MobileDrawer sama-sama merender tombol login.
+   - Ada komponen LoginButton yang dipanggil dua kali.
+   - Ada array menu yang berisi item "Masuk" lebih dari satu.
+5. Setelah login berhasil:
+   - Semua tombol "Masuk" harus hilang.
+   - Semua tombol "Buat Akun" harus hilang.
+6. Setelah logout:
+   - Hanya muncul SATU tombol "Masuk".
+   - Hanya muncul SATU tombol "Buat Akun".
+7. Jangan menggunakan CSS display:none untuk menyembunyikan tombol duplikat. Hapus penyebab render ganda pada source code.
+8. Audit seluruh komponen drawer/menu agar tidak ada item yang didaftarkan dua kali.
+
+Hasil akhir:
+- Guest: hanya 1 tombol Masuk dan 1 tombol Buat Akun.
+- Login: tidak ada tombol Masuk maupun Buat Akun.
+
+
+
+```
+# Prompt: Perbaiki autentikasi Telegram Drive
+```
+
 Masalah ditemukan.
 
 Database MongoDB telegram_drive sudah memiliki collection users, tetapi collection tersebut kosong.
