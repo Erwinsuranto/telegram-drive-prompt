@@ -9,6 +9,48 @@
 
 
 
+
+# Prompt 2 - Tombol Download tidak berfungsi
+```
+
+
+Perbaiki tombol "Download" pada panel detail file.
+
+Masalah:
+- Tombol Download dapat ditekan tetapi tidak melakukan apa pun.
+
+Yang diinginkan:
+1. Saat tombol Download ditekan, file langsung mulai diunduh.
+2. Gunakan downloadToken yang tersimpan di database.
+3. Jangan membuka halaman kosong.
+4. Jangan menampilkan error di browser.
+5. Pastikan download berhasil untuk semua tipe file.
+6. Jangan mengubah tampilan tombol.
+
+
+
+```
+# Prompt 1 (Prioritas) - Nama file harus bisa ditekan
+```
+
+
+Perbaiki interaksi pada halaman "My Files".
+
+Masalah saat ini:
+1. Nama file tidak bisa ditekan.
+2. Thumbnail/icon file juga tidak bisa ditekan.
+3. Pengguna harus menekan tombol titik tiga terlebih dahulu untuk melihat detail file.
+
+Yang diinginkan:
+- Seluruh area item file (thumbnail, nama file, dan informasi file) harus bisa ditekan.
+- Saat ditekan, langsung buka panel/detail file seperti yang sekarang muncul dari tombol titik tiga.
+- Tombol titik tiga tetap dipertahankan untuk menu tambahan.
+- Jangan mengubah tampilan desain yang sudah ada.
+- Pastikan berfungsi di desktop dan mobile.
+
+
+
+```
 # Prompt 1 – Tombol "Open File" salah (Prioritas 1)
 ```
 
