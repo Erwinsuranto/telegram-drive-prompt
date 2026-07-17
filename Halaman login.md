@@ -7,6 +7,91 @@
 
 
 
+
+
+# 
+```
+
+Sekarang bug berubah.
+
+Sebelumnya:
+- Semua orang bisa membuka /my-files tanpa login.
+
+Sekarang:
+- Halaman sudah diproteksi.
+- Tetapi setelah login berhasil, saya tetap kembali ke halaman /login.
+
+Jangan melakukan perubahan secara acak.
+
+Lakukan debugging terlebih dahulu.
+
+Periksa dan tampilkan hasil berikut:
+
+1. Setelah POST /api/auth/login
+   - apakah response status 200?
+   - apakah Set-Cookie dikirim?
+   - nama cookie apa?
+   - apakah cookie benar-benar tersimpan di browser?
+
+2. Setelah redirect
+   panggil /api/auth/me
+
+Tampilkan hasilnya.
+
+Harus diketahui apakah:
+- 200 + user
+atau
+- 401
+
+3. Middleware
+
+Tambahkan log sementara:
+
+- cookie diterima?
+- token ditemukan?
+- token valid?
+- user ditemukan?
+
+4. Pastikan nama cookie sama di semua tempat.
+
+Misalnya:
+
+SESSION_COOKIE=telegram_drive_session
+
+Harus dipakai oleh:
+- login
+- logout
+- auth/me
+- middleware
+- auth helper
+
+Tidak boleh ada:
+telegram_session
+session
+auth_token
+telegram_drive_session
+
+yang berbeda-beda.
+
+5. Jika memakai JWT:
+- cek verify()
+- cek secret sama
+- cek expire
+
+6. Jika memakai Mongo:
+- cek user ditemukan
+- cek session ditemukan
+
+Jangan ubah UI lagi.
+
+Cari akar masalah kenapa setelah login middleware tetap menganggap user belum login.
+
+Setelah menemukan penyebabnya, baru perbaiki.
+
+
+
+
+```
 # 
 ```
 
