@@ -8,6 +8,61 @@
 
 
 
+
+
+# 
+```
+
+
+
+Perubahan footer tidak ada efek sama sekali.
+
+Saya sudah:
+- Build ulang
+- Restart PM2
+- Hapus cache browser
+- Hapus data aplikasi browser
+
+Tampilan tetap sama.
+
+Artinya file yang diubah bukan file/layout yang digunakan halaman Profil.
+
+Lakukan investigasi.
+
+1. Cari komponen footer yang sebenarnya dirender pada halaman Profil.
+2. Cari layout parent yang membungkus halaman Profil.
+3. Cari apakah ada:
+   - min-height: 100vh
+   - flex: 1
+   - flex-grow
+   - justify-between
+   - justify-content: space-between
+   - mt-auto
+   - padding-bottom besar
+   - spacer kosong
+   - div kosong
+   - container dengan tinggi penuh
+
+Kemungkinan besar ruang kosong berasal dari parent layout, bukan dari footer.
+
+Perbaiki agar:
+
+[Konten Profil]
+↓ jarak sekitar 20–24px
+[Footer]
+Telegram Drive
+Version 0.1.0
+Copyright © 2026
+
+Footer harus langsung berada setelah konten, bukan terdorong ke bawah oleh layout.
+
+Setelah selesai, sebutkan:
+- file yang diubah
+- class CSS yang diubah
+- penyebab sebenarnya kenapa perubahan sebelumnya tidak berpengaruh.
+
+
+```
 # 
 ```
 
