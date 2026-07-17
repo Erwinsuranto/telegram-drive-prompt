@@ -9,7 +9,55 @@
 
 
 
+# 
+```
 
+Perbaiki fungsi tombol Download pada Action Menu di halaman My Files.
+
+Saat ini terjadi bug:
+
+- Klik tombol titik tiga (⋮).
+- Muncul Action Menu.
+- Klik Download.
+- Action Menu hanya tertutup dan kembali ke daftar file.
+
+Ini salah.
+
+Perilaku yang benar:
+
+1. Klik ⋮.
+2. Klik Download.
+3. Tutup Action Menu.
+4. Langsung navigasi ke halaman Download file.
+
+Contoh:
+GET /download/{downloadToken}
+atau route download yang digunakan aplikasi.
+
+Halaman Download harus:
+- menampilkan nama file,
+- ukuran file,
+- tipe file,
+- tombol Download,
+- tombol Copy Link,
+- tombol Share.
+
+Jangan melakukan download langsung dari Action Menu.
+
+Action Menu hanya melakukan navigasi ke halaman Download.
+
+Pastikan tombol Download benar-benar menjalankan router.push() atau Link ke halaman Download menggunakan downloadToken/fileId yang benar.
+
+Verifikasi:
+- Download dari My Files berhasil.
+- Download dari halaman Upload berhasil.
+- Download dari halaman Share berhasil.
+- Tidak ada lagi kasus tombol Download hanya menutup popup.
+
+
+
+
+```
 # 
 ```
 
