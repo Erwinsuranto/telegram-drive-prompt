@@ -13,6 +13,94 @@
 
 
 
+# Prompt AI A - Tahap Berikutnya Prompt: Sempurnakan Halaman My Files
+```
+
+
+
+# Prompt: Complete My Files Page
+
+Tujuan:
+Jadikan halaman My Files sebagai pusat pengelolaan file Telegram Drive. Halaman ini harus siap menerima file dari Website maupun Telegram Downloader Bot di masa depan.
+
+Yang harus dikerjakan:
+
+1. Layout
+- Tampilan bersih seperti Google Drive / MEGA.
+- Responsive desktop, tablet, dan mobile.
+- Konsisten dengan tema Telegram Drive.
+
+2. File List
+Setiap file menampilkan:
+- Thumbnail (jika gambar/video)
+- Icon sesuai tipe file
+- Nama file
+- Ukuran file
+- Tanggal upload
+- Tombol menu (⋮)
+
+3. Menu File (⋮)
+- Download
+- Share
+- Rename
+- Move
+- Favorite / Unfavorite
+- Delete
+- Detail
+
+4. Empty State
+Jika belum ada file:
+- Tampilkan ilustrasi sederhana.
+- Pesan:
+  "Belum ada file."
+  "Upload file atau gunakan Telegram Downloader Bot untuk mulai menyimpan file."
+
+5. Loading State
+- Gunakan skeleton loading.
+- Jangan tampilkan halaman kosong saat data dimuat.
+
+6. Search
+Tambahkan search bar di bagian atas halaman.
+
+7. Sort
+Tambahkan pilihan:
+- Terbaru
+- Terlama
+- Nama A-Z
+- Nama Z-A
+- Ukuran terbesar
+- Ukuran terkecil
+
+8. View Mode
+Tambahkan switch:
+- Grid View
+- List View
+
+9. Selection Mode
+Long press atau checkbox untuk memilih banyak file.
+Saat aktif tampilkan:
+- Select All
+- Download ZIP
+- Delete
+- Move
+
+10. Pagination / Infinite Scroll
+Gunakan infinite scroll atau pagination agar performa tetap baik.
+
+11. API Preparation
+Pisahkan UI dari data.
+Gunakan service/API layer sehingga nanti data dapat berasal dari:
+- Upload Website
+- Telegram Downloader Bot
+- Upload Telegram Bot
+
+Jangan gunakan data dummy yang tertanam di komponen. Semua komponen harus siap dihubungkan ke API.
+
+Target akhir:
+Halaman My Files menjadi pusat semua file pengguna dan siap menerima sinkronisasi dari Telegram Downloader Bot tanpa perlu perubahan struktur UI.
+
+
+```
 
 # Prompt: Rapikan Footer Halaman Home
 ```
