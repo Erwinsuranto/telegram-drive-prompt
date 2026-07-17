@@ -11,6 +11,79 @@
 # 
 ```
 
+
+
+Menu drawer masih salah.
+
+Saya ingin menu berubah berdasarkan status login.
+
+== SAAT BELUM LOGIN ==
+Hanya tampilkan:
+
+🏠 Beranda
+ℹ️ Tentang
+❓ Bantuan
+
+----------------
+
+🔐 Masuk
+📝 Buat Akun
+
+JANGAN tampilkan:
+- File Saya
+- Unggah
+- Cari
+- Shared with me
+- Collaborate
+- Profil
+- Favorit
+- Recent
+- Pengaturan
+- Logout
+
+==================================================
+
+== SETELAH LOGIN ==
+
+Tampilkan:
+
+🏠 Beranda
+📁 File Saya
+⬆️ Unggah
+🔍 Cari
+👤 Profil
+⭐ Favorit
+🕒 Recent
+🤝 Shared with me
+🤝 Collaborate
+⚙️ Pengaturan
+ℹ️ Tentang
+❓ Bantuan
+
+----------------
+
+🚪 Keluar
+
+JANGAN tampilkan lagi:
+- Masuk
+- Buat Akun
+
+==================================================
+
+Gunakan status autentikasi (session/cookie/token) sebagai satu-satunya penentu.
+
+Semua menu harus dirender secara conditional, bukan disembunyikan dengan CSS.
+
+Setelah login atau logout, drawer harus otomatis berubah tanpa refresh halaman.
+
+Cari penyebab bug apabila menu guest masih muncul setelah login.
+
+
+```
+
+# 
+```
+
 Masalah:
 
 Login sudah berhasil dan user sudah berada di halaman My Files, tetapi drawer masih menampilkan menu Guest:
