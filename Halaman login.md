@@ -8,6 +8,86 @@
 
 
 
+# 
+```
+
+Masalah:
+
+Login sudah berhasil dan user sudah berada di halaman My Files, tetapi drawer masih menampilkan menu Guest:
+- 🔒 Masuk
+- ✍️ Buat Akun
+
+Ini adalah bug.
+
+Perbaiki dengan aturan berikut:
+
+1. Setelah login berhasil, cek session/cookie/token autentikasi saat render drawer.
+
+2. Jika user sudah login:
+   Hapus menu:
+   - Masuk
+   - Buat Akun
+
+3. Ganti dengan menu user:
+
+👤 Profil
+⭐ Favorit
+🕒 Terbaru
+📤 Dibagikan
+⚙️ Pengaturan
+🚪 Keluar
+
+4. Menu Guest hanya boleh muncul jika user BELUM login.
+
+5. Pastikan status login diperiksa saat:
+   - halaman pertama dimuat,
+   - refresh browser,
+   - membuka drawer,
+   - pindah halaman.
+
+6. Jika session berubah (login/logout), drawer harus otomatis melakukan re-render tanpa perlu refresh manual.
+
+7. Cari penyebab bug. Kemungkinan:
+   - Drawer menggunakan state login lama.
+   - Session hanya dicek saat aplikasi pertama dibuka.
+   - Cookie sudah dibuat tetapi drawer tidak membaca ulang status autentikasi.
+   - Context/AuthProvider tidak mengirim update ke Drawer.
+
+8. Jangan gunakan CSS untuk menyembunyikan menu. Perbaiki logika render berdasarkan status autentikasi.
+
+Hasil akhir:
+
+Belum login:
+- Beranda
+- File Saya
+- Unggah
+- Cari
+- Tentang
+- Bantuan
+- Masuk
+- Buat Akun
+
+Sudah login:
+- Beranda
+- File Saya
+- Unggah
+- Cari
+- Tentang
+- Bantuan
+- Profil
+- Favorit
+- Terbaru
+- Dibagikan
+- Pengaturan
+- Keluar
+
+Menu "Masuk" dan "Buat Akun" tidak boleh muncul setelah login berhasil.
+
+
+
+
+```
+
 
 # Prompt: Perbaiki autentikasi Telegram Drive
 ```
