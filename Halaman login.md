@@ -8,6 +8,52 @@
 
 
 
+# 
+```
+
+Rapikan footer halaman Profil dan seluruh website.
+
+Masalah saat ini:
+Footer "Telegram Drive - Version - Copyright" memiliki jarak kosong (margin/padding-top) yang terlalu besar dari konten di atasnya.
+
+Perbaiki menjadi seperti aplikasi mobile modern.
+
+Yang diinginkan:
+
+- Kurangi margin-top footer menjadi sekitar 16–24px.
+- Jangan ada ruang kosong yang sangat lebar sebelum footer.
+- Footer tetap berada di bawah card terakhir dengan jarak yang proporsional.
+- Gunakan padding vertikal yang lebih kecil.
+- Footer tidak perlu memakan tinggi layar.
+
+Contoh struktur:
+
+-----------------------
+[ Card Keluar ]
+(jarak 20px)
+
+-----------------------
+Telegram Drive
+Version 0.1.0
+Copyright © 2026
+-----------------------
+
+Gunakan spacing yang konsisten di seluruh halaman (8px / 16px / 24px), jangan ada margin acak yang terlalu besar.
+
+Periksa apakah jarak tersebut berasal dari:
+- margin-top
+- padding-top
+- min-height
+- flex-grow
+- spacer kosong
+- layout wrapper
+
+Hapus spacer yang tidak diperlukan agar footer naik mendekati konten.
+
+
+
+
+```
 
 # Prompt untuk AI
 ```
