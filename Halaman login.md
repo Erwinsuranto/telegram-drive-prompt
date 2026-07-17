@@ -10,6 +10,146 @@
 
 
 
+
+# 
+```
+
+Ubah informasi aplikasi pada halaman Profil.
+
+Jangan gunakan layout vertikal:
+
+Telegram Drive
+Version 0.1.0
+Copyright ©2026
+
+Ganti menjadi satu baris yang ringkas:
+
+────────────────────────────
+
+Telegram Drive • v0.1.0 • ©2026
+
+Style:
+- Border top tipis.
+- Margin-top 24px.
+- Padding-top 16px.
+- Padding-bottom 16px.
+- Font size 13–14px.
+- Warna teks abu-abu (#6b7280).
+- Center horizontal.
+- Tidak menggunakan card.
+- Tidak menggunakan shadow.
+- Tidak menggunakan background khusus.
+- Hanya tampil di halaman Profil/Akun.
+- Jangan tampil di halaman lain.
+
+
+
+
+```
+
+
+# 
+```
+
+Continue the project following SPEC.md and ROADMAP.md.
+
+Use TWO design references:
+
+1. Homepage Digital Cell reference image.
+2. Login & Register reference image I just uploaded.
+
+These are the official design references for the project.
+
+Your job is to reproduce this Authentication UI as accurately as possible while following the project's architecture.
+
+Requirements
+
+Build:
+
+- Login Page
+- Register Page
+
+Follow the uploaded design almost pixel-perfect.
+
+Implement:
+
+LOGIN
+- Logo
+- Welcome text
+- WhatsApp input
+- Password input
+- Show / Hide password
+- Remember Me
+- Forgot Password
+- Login button
+- Divider
+- Google Login button
+- Apple Login button
+- Register link
+
+REGISTER
+
+- Logo
+- Full Name
+- WhatsApp
+- Email (optional)
+- Password
+- Confirm Password
+- Show / Hide Password
+- Terms checkbox
+- Register button
+- Google Login
+- Apple Login
+- Login link
+
+Animations
+
+Use Framer Motion.
+
+Match:
+
+- spacing
+- typography
+- rounded corner
+- shadows
+- colors
+- gradients
+- icons
+- transitions
+
+Responsive:
+
+- Mobile
+- Tablet
+- Desktop
+
+Reuse existing UI components.
+
+No backend.
+No API.
+Mock data only.
+
+Rules
+
+- No duplicated code
+- No hardcoded colors
+- No any
+- Use design tokens
+- Follow existing architecture
+
+When finished
+
+- Update ROADMAP.md
+- Mark ONLY Login & Register tasks complete
+- Update progress percentage
+- Update CHANGELOG.md
+- Commit changes
+
+
+
+
+```
+
 # 
 ```
 
