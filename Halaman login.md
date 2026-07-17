@@ -12,6 +12,86 @@
 ```
 
 
+Masih ada bug pada autentikasi.
+
+Gejalanya:
+- Saya sudah berhasil login.
+- Halaman My Files sudah bisa diakses.
+- Tetapi drawer/menu masih menampilkan menu Guest:
+  - Masuk
+  - Buat Akun
+
+Ini berarti status login yang dipakai drawer berbeda dengan status login aplikasi.
+
+Perbaiki dengan benar.
+
+Yang harus dilakukan:
+
+1. Gunakan SATU sumber status autentikasi.
+   Misalnya:
+   - cookie telegram_drive_session
+   - JWT
+   - auth context
+   - server session
+
+2. Drawer TIDAK BOLEH memakai state lokal sendiri.
+
+3. Saat halaman dibuka:
+   - cek session dari server (/api/auth/me atau endpoint yang digunakan)
+   - jika user login tampilkan menu user
+   - jika belum login tampilkan menu guest
+
+4. Setelah login berhasil:
+   - update auth context
+   - refresh status user
+   - drawer langsung berubah tanpa reload.
+
+5. Setelah logout:
+   - hapus session
+   - drawer kembali ke mode guest.
+
+Menu Guest hanya:
+
+🏠 Beranda
+ℹ️ Tentang
+❓ Bantuan
+
+----------------
+
+🔐 Masuk
+📝 Buat Akun
+
+Menu User:
+
+🏠 Beranda
+📁 File Saya
+⬆️ Unggah
+🔍 Cari
+🤝 Shared with me
+🤝 Collaborate
+⭐ Favorit
+👤 Profil
+⚙️ Pengaturan
+ℹ️ Tentang
+❓ Bantuan
+
+----------------
+
+🚪 Keluar
+
+Jangan sembunyikan dengan CSS.
+
+Perbaiki penyebab utamanya.
+
+Cari sendiri kenapa drawer masih menganggap user sebagai guest walaupun login berhasil.
+
+
+
+```
+# 
+```
+
+
 
 Menu drawer masih salah.
 
