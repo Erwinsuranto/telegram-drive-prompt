@@ -9,6 +9,47 @@
 
 
 
+
+
+#
+```
+
+Perbaiki menu sidebar (drawer) pada tampilan mobile.
+
+Masalah yang terjadi:
+
+1. Setelah menu (drawer) terbuka, pengguna tidak bisa menutupnya dengan menekan area kosong di luar menu.
+2. Overlay/backdrop tidak menutupi seluruh layar sehingga klik pada area luar tidak menutup menu.
+3. Tombol menu (hamburger) terlihat tidak menyatu dengan drawer sehingga setelah drawer terbuka tombol tersebut tidak berfungsi sebagai toggle.
+4. Pengguna seperti terjebak di dalam menu karena tidak ada cara untuk kembali selain me-refresh halaman.
+
+Yang harus diperbaiki:
+
+- Gunakan satu state yang sama untuk mengatur buka/tutup drawer.
+- Tambahkan backdrop/overlay yang menutupi seluruh layar.
+- Overlay harus berada di bawah drawer tetapi di atas seluruh konten halaman.
+- Menekan area overlay harus langsung menutup drawer.
+- Menekan tombol hamburger lagi juga harus menutup drawer (toggle).
+- Tekan tombol Escape pada desktop juga harus menutup drawer.
+- Saat drawer terbuka, body tidak boleh bisa di-scroll.
+- Drawer tetap slide dari kiri seperti sekarang.
+- Pastikan z-index drawer lebih tinggi daripada overlay.
+- Jangan mengubah tampilan desktop.
+- Jangan mengubah desain atau warna menu.
+
+Lakukan pengecekan setelah selesai:
+
+✓ Menu dapat dibuka.
+✓ Menu dapat ditutup dengan menekan area kosong.
+✓ Menu dapat ditutup dengan tombol hamburger.
+✓ Tidak ada area yang membuat pengguna terjebak.
+✓ Berfungsi dengan baik di Android Chrome dan browser mobile lainnya.
+✓ Pastikan tidak ada regresi pada fitur lain.
+
+
+
+
+```
 # Prompt: Fix Mobile Layout Overlap (Telegram Drive)
 ```
 
