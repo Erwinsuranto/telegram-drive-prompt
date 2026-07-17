@@ -6,6 +6,88 @@
 
 
 
+# 
+```
+
+Perbaiki fitur Download saat memilih banyak file (Multi-Select).
+
+Saat ini terjadi bug:
+
+- Saya memilih beberapa file (misalnya 3 file).
+- Saya menekan tombol Download.
+- Sistem langsung mengunduh satu file saja.
+
+Perilaku ini salah.
+
+Perilaku yang diinginkan:
+
+1. Jika hanya 1 file yang dipilih:
+- Klik Download.
+- Langsung buka halaman Download file tersebut seperti sekarang.
+
+2. Jika lebih dari 1 file dipilih:
+Jangan langsung download.
+
+Tampilkan dialog konfirmasi atau halaman konfirmasi terlebih dahulu.
+
+Contoh:
+
+----------------------------------------
+Download 3 file?
+
+Anda akan mengunduh:
+
+✓ Screenshot_1.jpg
+✓ Screenshot_2.jpg
+✓ Screenshot_3.jpg
+
+Total file : 3
+Total ukuran : xxx MB
+
+[ Batal ]   [ Download ]
+----------------------------------------
+
+3. Setelah pengguna menekan tombol Download pada dialog:
+
+- Sistem membuat satu arsip ZIP yang berisi semua file yang dipilih.
+- Nama file ZIP:
+
+TelegramDrive_YYYYMMDD_HHMM.zip
+
+atau
+
+TelegramDrive_3files.zip
+
+4. Setelah ZIP selesai dibuat:
+
+- Browser mengunduh file ZIP tersebut.
+- Jangan mengunduh file satu per satu.
+- Jangan hanya mengunduh file pertama.
+
+5. Jika browser atau backend belum mendukung ZIP:
+
+Tampilkan pesan:
+
+"Multi-file download belum tersedia."
+
+Jangan mengunduh satu file secara acak.
+
+6. Dialog konfirmasi harus menampilkan:
+
+- Jumlah file
+- Nama file
+- Total ukuran
+- Tombol Download
+- Tombol Batal
+
+7. Pastikan fitur bekerja di desktop dan mobile.
+
+Target UX mengikuti Google Drive, MEGA, OneDrive, dan Dropbox.
+
+
+
+
+```
 
 # 
 ```
