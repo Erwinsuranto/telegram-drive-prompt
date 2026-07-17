@@ -13,6 +13,56 @@
 # 
 ```
 
+Layout footer sekarang salah.
+
+Jangan pindahkan footer ke tengah halaman.
+
+Yang saya inginkan:
+
+1. Footer tetap berada PALING BAWAH halaman.
+2. Tetapi jarak antara konten terakhir dan footer cukup sekitar 24px.
+3. Jangan ada area kosong ratusan pixel sebelum footer.
+4. Jangan gunakan spacer kosong.
+5. Jangan gunakan div kosong.
+6. Jangan gunakan margin-top besar.
+7. Jangan gunakan position:absolute ataupun fixed untuk footer.
+8. Footer mengikuti tinggi konten (natural flow).
+
+Susunan halaman harus seperti ini:
+
+Header
+↓
+
+Konten Search
+↓
+
+(jarak sekitar 24px)
+
+────────────────────
+
+Telegram Drive
+Version 0.1.0
+Copyright © 2026
+
+────────────────────
+
+akhir halaman
+
+Cari penyebab sebenarnya kenapa footer muncul di tengah halaman.
+Kemungkinan parent layout memakai min-height:100vh, flex-1, justify-between, atau mt-auto.
+
+Perbaiki layout parent, bukan hanya mengubah margin footer.
+
+Jelaskan file yang diubah dan penyebab bug setelah selesai.
+
+
+
+
+```
+
+# 
+```
+
 
 
 Perubahan footer tidak ada efek sama sekali.
