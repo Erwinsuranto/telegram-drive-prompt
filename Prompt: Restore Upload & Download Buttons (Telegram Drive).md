@@ -7,7 +7,77 @@
 
 
 
+# 
+```
 
+Perbaiki mekanisme pemilihan file di halaman My Files.
+
+Saat ini checkbox "Select all" dan checkbox setiap file selalu tampil.
+
+Saya ingin perilakunya seperti Google Drive, Google Photos, dan file manager Android.
+
+Perubahan yang diinginkan:
+
+1. Mode normal
+- Jangan tampilkan checkbox "Select all".
+- Jangan tampilkan checkbox di setiap file.
+- Tampilan hanya:
+  - Thumbnail
+  - Nama file
+  - Informasi file
+  - Tombol Favorite
+  - Tombol titik tiga (⋮)
+
+2. Masuk Selection Mode
+Jika pengguna menekan dan menahan (Long Press) pada salah satu file:
+
+- Aktifkan Selection Mode.
+- File yang ditekan otomatis terpilih.
+- Baru tampilkan:
+  ✓ Checkbox di setiap file.
+  ✓ Checkbox "Select all" di bagian atas.
+  ✓ Jumlah file yang dipilih.
+  ✓ Toolbar aksi massal.
+
+Contoh:
+✓ 1 dipilih
+☐ Select all
+
+3. Selection Mode
+Selama mode ini aktif:
+
+- Tap file lain = pilih/batalkan pilih.
+- Checkbox bekerja normal.
+- Select All memilih seluruh file.
+- Select All kedua kali membatalkan semua.
+
+4. Keluar Selection Mode
+Selection Mode otomatis ditutup jika:
+- semua file dibatalkan,
+- pengguna menekan tombol Back,
+- pengguna menekan tombol Cancel/X.
+
+Setelah keluar:
+- Semua checkbox menghilang.
+- Select All menghilang.
+- Tampilan kembali normal.
+
+5. Jangan ubah fungsi yang sudah ada
+- Klik file tetap membuka Preview.
+- Klik titik tiga tetap membuka Action Menu.
+- Favorite tetap berfungsi.
+
+Yang berubah hanya cara masuk ke mode pemilihan file.
+
+Target UX harus sama seperti:
+- Google Drive Android
+- Google Photos
+- Samsung My Files
+
+
+
+
+```
 
 # 
 ```
