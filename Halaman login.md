@@ -7,6 +7,91 @@
 
 
 
+# 
+```
+
+
+Masih ada bug autentikasi yang sangat serius.
+
+Langkah reproduksi:
+
+1. Hapus semua data browser (cookies, localStorage, sessionStorage).
+2. Tutup browser.
+3. Buka langsung:
+
+/my-files
+
+Hasil sekarang:
+Halaman My Files tetap bisa diakses tanpa login.
+
+Ini SALAH.
+
+Yang benar:
+
+Jika user BELUM login:
+
+- /my-files
+- /upload
+- /shared-with-me
+- /favorites
+- /recent
+- /profile
+- /settings
+
+WAJIB redirect ke:
+
+/login
+
+Tidak boleh menampilkan halaman My Files walaupun satu detik.
+
+===================================
+
+Periksa seluruh sistem autentikasi.
+
+Cari penyebab sebenarnya.
+
+Kemungkinan:
+- middleware.ts tidak melindungi route
+- layout tidak mengecek session
+- page.tsx tidak memanggil auth()
+- SessionProvider default menganggap login
+- route /my-files menggunakan dummy user
+- cookie tidak pernah divalidasi
+- fallback memakai user "default"
+
+===================================
+
+Saya ingin proteksi dilakukan di SERVER.
+
+Jangan hanya sembunyikan komponen React.
+
+Gunakan middleware atau server component.
+
+Pseudo:
+
+if (!session) {
+   redirect('/login');
+}
+
+bukan
+
+if (!user) return null;
+
+===================================
+
+Periksa seluruh route yang membutuhkan login.
+
+Pastikan semua route privat tidak dapat diakses tanpa session yang valid.
+
+Jika ada dummy user, default user, bypass auth, development mode, atau fallback session, hapus semuanya.
+
+Tidak boleh ada akses ke My Files tanpa login.
+
+Cari akar masalahnya, bukan hanya memperbaiki tampilan.
+
+
+
+```
 
 # 
 ```
