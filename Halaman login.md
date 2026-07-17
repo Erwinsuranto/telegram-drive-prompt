@@ -11,6 +11,61 @@
 
 
 
+
+
+
+# Prompt: Rapikan Footer Halaman Home
+```
+Rapikan footer pada halaman Home Telegram Drive agar tampil lebih modern dan tidak seperti website biasa.
+
+Perubahan yang harus dilakukan:
+
+1. Hapus footer lama yang terdiri dari tiga baris:
+   - Telegram Drive
+   - Version 0.1.0
+   - Copyright © 2026
+
+2. Ganti menjadi footer minimalis satu baris:
+
+────────────────────────
+Telegram Drive • v0.1.0 • ©2026
+
+3. Footer hanya berupa teks, tanpa:
+   - Card
+   - Background khusus
+   - Shadow
+   - Border tebal
+
+4. Tambahkan hanya border-top tipis (1px) sebagai pemisah dari konten.
+
+5. Style:
+   - Font size: 13–14px
+   - Warna teks: abu-abu (#6B7280)
+   - Text align: center
+   - Padding atas & bawah: 16px
+   - Margin-top: 24px
+
+6. Jika tinggi konten belum memenuhi layar, footer tetap berada di bagian bawah halaman (sticky footer menggunakan Flex Layout), tetapi tidak menutupi konten.
+
+7. Jangan gunakan position: fixed karena akan menutupi konten saat halaman memiliki banyak isi.
+
+8. Footer harus responsif di desktop, tablet, dan mobile.
+
+Hasil akhir yang diinginkan:
+
+────────────────────────
+Telegram Drive • v0.1.0 • ©2026
+
+Tujuan:
+- Tampilan lebih modern seperti aplikasi Google Drive atau MEGA.
+- Menghemat ruang.
+- Tidak mengganggu fokus pengguna.
+- Mudah diperbarui ketika versi aplikasi berubah.
+
+
+
+
+```
 # 
 ```
 
