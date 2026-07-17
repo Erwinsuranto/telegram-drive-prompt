@@ -9,6 +9,88 @@
 
 
 
+# Prompt untuk AI
+```
+
+
+Rapikan struktur drawer/menu Telegram Drive.
+
+Drawer sekarang terlalu ramai.
+
+Buat struktur baru seperti aplikasi cloud modern (Google Drive / MEGA / Dropbox).
+
+==========================
+DRAWER
+==========================
+
+🏠 Beranda
+
+📁 File Saya
+⬆️ Unggah
+🔍 Cari
+
+-------------------------
+
+👤 Profil
+
+-------------------------
+
+ℹ️ Tentang
+❓ Bantuan
+
+-------------------------
+
+🚪 Keluar
+
+==========================
+
+Pindahkan menu berikut ke halaman Profil:
+
+⭐ Favorit
+🕒 Recent
+🤝 Shared with me
+👥 Collaborate
+⚙️ Pengaturan
+
+==========================
+
+Halaman Profil menjadi pusat akun.
+
+Urutannya:
+
+Avatar
+Nama
+Email
+Username
+
+-------------------------
+
+🔑 Ganti Password
+
+-------------------------
+
+⭐ Favorit
+🕒 Recent
+🤝 Shared with me
+👥 Collaborate
+
+-------------------------
+
+⚙️ Pengaturan
+
+-------------------------
+
+🚪 Keluar
+
+==========================
+
+Gunakan ikon konsisten (SVG/Lucide), jangan memakai emoji.
+
+Drawer harus lebih pendek sehingga seluruh menu utama terlihat tanpa perlu scroll pada layar HP.
+
+
+
+```
 # 
 ```
 
