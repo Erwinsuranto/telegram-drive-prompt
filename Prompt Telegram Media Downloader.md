@@ -8,6 +8,164 @@
 
 
 
+# AI B (repo Telegram Media Downloader).
+```
+# Stage 2.3 - Folder Sync (Telegram Media Downloader)
+
+Tujuan:
+
+Implementasikan sinkronisasi Folder antara Telegram Media Downloader dan Telegram Drive menggunakan API Bridge yang sudah tersedia.
+
+Jangan mengimplementasikan:
+
+- Share
+- Trash
+- Favorite
+- Recent
+- Collaboration
+
+--------------------------------------------------
+
+Flow
+
+User memilih folder aktif
+
+↓
+
+Downloader memproses media
+
+↓
+
+Upload ke Telegram
+
+↓
+
+Metadata Sync
+
+↓
+
+Folder Sync
+
+↓
+
+Website menempatkan file ke folder yang sesuai
+
+--------------------------------------------------
+
+Gunakan endpoint Folder API yang sudah disediakan oleh Telegram Drive.
+
+Seluruh komunikasi dilakukan melalui DriveSyncService.
+
+Jangan memanggil endpoint langsung dari downloader.
+
+--------------------------------------------------
+
+Implementasikan:
+
+- Folder ID
+- Folder Path
+- Root Folder
+- Default Folder
+- Folder Validation
+- Folder Mapping
+- Folder Cache
+
+--------------------------------------------------
+
+Jika Folder tidak ditemukan:
+
+Gunakan Default Folder.
+
+Jangan menghentikan proses download.
+
+--------------------------------------------------
+
+Retry
+
+Gunakan retry policy yang sama seperti Metadata Sync.
+
+401/403/422
+
+Tidak retry.
+
+5xx
+
+Timeout
+
+Network Error
+
+Retry dengan exponential backoff.
+
+--------------------------------------------------
+
+Queue
+
+Jika website offline:
+
+Folder Sync masuk retry queue.
+
+Downloader tetap sukses.
+
+--------------------------------------------------
+
+Logging
+
+Tambahkan:
+
+FOLDER_SYNC_START
+
+FOLDER_SYNC_SUCCESS
+
+FOLDER_SYNC_FAILED
+
+FOLDER_SYNC_RETRY
+
+FOLDER_SYNC_QUEUE
+
+--------------------------------------------------
+
+Backward Compatibility
+
+Jangan mengubah:
+
+- Command Bot
+- Download Pipeline
+- Upload Telegram
+- Metadata Sync
+- Storage Facade
+- API Bridge
+- Schema Lama
+
+--------------------------------------------------
+
+Verification
+
+Pastikan:
+
+npm run lint
+
+npm run typecheck
+
+npm run build
+
+Semua berhasil.
+
+--------------------------------------------------
+
+Output
+
+Berikan laporan:
+
+- File yang dibuat.
+- File yang diubah.
+- Diagram Folder Sync.
+- Retry Flow.
+- Error Handling.
+- Cara konfigurasi Folder Sync.
+- Langkah pengujian.
+
+Jangan mengimplementasikan Share, Trash, Favorite, Recent ataupun Collaboration pada tahap ini.
+```
 # 
 ```
 # Stage 2.2 - Metadata Sync (Telegram Media Downloader)
