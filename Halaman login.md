@@ -14,6 +14,203 @@
 
 # 
 ```
+# Stage 2.0 - Build Telegram Drive Integration Bridge (Server API)
+
+Tujuan:
+Bangun Integration Bridge antara Telegram Media Downloader dan Telegram Drive.
+
+Tahap ini hanya membuat API Server sebagai pintu masuk integrasi.
+
+Jangan mengimplementasikan sinkronisasi metadata, folder, share, trash, favorite, atau collaboration.
+
+--------------------------------------------------
+
+Bangun modul baru:
+
+integration/
+
+yang berisi:
+
+- Controller
+- Service
+- Middleware
+- Validator
+- Types
+- Config
+
+--------------------------------------------------
+
+Authentication
+
+Implementasikan API authentication khusus antar aplikasi.
+
+Gunakan API Key melalui environment.
+
+Contoh:
+
+DRIVE_API_KEY
+
+Semua endpoint integrasi wajib menggunakan middleware authentication.
+
+--------------------------------------------------
+
+Versioning
+
+Semua endpoint berada pada:
+
+/api/v1/integration/
+
+Siapkan agar mudah membuat v2 di masa depan.
+
+--------------------------------------------------
+
+Endpoint
+
+Implementasikan endpoint kosong (stub) beserta validasi request.
+
+POST /api/v1/integration/files
+
+POST /api/v1/integration/folders
+
+POST /api/v1/integration/share
+
+POST /api/v1/integration/trash
+
+POST /api/v1/integration/favorite
+
+POST /api/v1/integration/recent
+
+GET /api/v1/integration/health
+
+Belum perlu menjalankan business logic.
+
+Cukup:
+
+- Authentication
+- Validation
+- Response standard
+- Logging
+
+--------------------------------------------------
+
+Validation
+
+Gunakan validator terpusat.
+
+Semua payload harus divalidasi.
+
+--------------------------------------------------
+
+Response Standard
+
+Semua endpoint menggunakan format:
+
+success
+
+message
+
+data
+
+requestId
+
+timestamp
+
+--------------------------------------------------
+
+Error Handling
+
+Standarisasi:
+
+400
+
+401
+
+403
+
+404
+
+409
+
+422
+
+429
+
+500
+
+--------------------------------------------------
+
+Logging
+
+Log:
+
+Request
+
+Response
+
+Duration
+
+Request ID
+
+Error
+
+Jangan pernah mencetak API Key.
+
+--------------------------------------------------
+
+Idempotency
+
+Siapkan struktur agar endpoint POST dapat mendukung Idempotency-Key di tahap berikutnya.
+
+Belum perlu implementasi penuh.
+
+--------------------------------------------------
+
+Documentation
+
+Tambahkan dokumentasi Integration API.
+
+Jelaskan:
+
+- Authentication
+- Endpoint
+- Header
+- Request
+- Response
+- Error Code
+
+--------------------------------------------------
+
+Verification
+
+Pastikan:
+
+npm run lint
+
+npm run typecheck
+
+npm run build
+
+Semua berhasil.
+
+--------------------------------------------------
+
+Output
+
+Berikan laporan:
+
+- Struktur folder baru.
+- Endpoint yang dibuat.
+- Middleware yang dibuat.
+- Validator.
+- Cara AI B menggunakan API nanti.
+
+Tahap ini TIDAK BOLEH mengimplementasikan sinkronisasi metadata ataupun integrasi Telegram Media Downloader.
+
+Fokus hanya membangun API Bridge yang siap dipakai pada Stage 2.2.
+```
+
+# 
+```
 # Prompt: Final UI/UX Audit & Production Readiness
 
 Tujuan:
