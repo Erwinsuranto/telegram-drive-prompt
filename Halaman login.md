@@ -15,6 +15,173 @@
 
 
 
+# Prompt: Trash (Recycle Bin)
+```
+
+
+# Prompt: Build Complete Shared Files System
+
+Tujuan:
+Bangun sistem Shared Files profesional seperti Google Drive, Dropbox, dan MEGA. Sistem ini akan digunakan untuk membagikan file maupun folder melalui link publik maupun privat.
+
+## Shared Dashboard
+
+Buat halaman Shared yang menampilkan:
+
+- Shared by Me
+- Shared with Me
+- Public Links
+- Expired Links
+
+Gunakan Tab Navigation.
+
+## Share Dialog
+
+Saat user memilih Share pada file/folder tampilkan dialog:
+
+- Copy Link
+- Public Link
+- Private Link
+- Expiration Date
+- Password Protection (UI siap)
+- Permission
+
+Permission:
+
+- View Only
+- Download
+- Edit (coming soon)
+
+## Link Information
+
+Tampilkan:
+
+- Link
+- Created Date
+- Expired Date
+- Total Access
+- Download Count
+- Status
+
+## Copy Link
+
+Tombol Copy Link.
+
+Tampilkan toast berhasil.
+
+## QR Code
+
+Generate QR Code dari Share Link.
+
+User dapat mengunduh QR Code.
+
+## Share Management
+
+User dapat:
+
+- Disable Link
+- Enable Link
+- Change Expiration
+- Change Permission
+- Delete Link
+
+## Public Download Page
+
+Jika membuka Share Link tampilkan:
+
+- Preview File
+- Nama
+- Ukuran
+- Upload Date
+- Download Button
+
+Jika gambar/video tampilkan preview.
+
+## Expired Link
+
+Jika link kadaluarsa tampilkan halaman:
+
+"Link sudah tidak tersedia."
+
+## Search
+
+Cari Shared File.
+
+## Sort
+
+- Terbaru
+- Terlama
+- Nama
+- Jumlah Download
+
+## Empty State
+
+Belum ada Shared File.
+
+## Loading
+
+Skeleton Loading.
+
+## API
+
+Gunakan API.
+
+Tidak boleh menggunakan data dummy.
+
+## Mobile
+
+Bottom Sheet.
+
+## Desktop
+
+Context Menu.
+
+## Integrasi Telegram Downloader Bot
+
+Semua file hasil Telegram Downloader Bot dapat langsung dibagikan melalui Share Link tanpa upload ulang.
+
+Website dan Bot menggunakan FileModel yang sama.
+
+## Target
+
+Shared Files menjadi pusat berbagi file Telegram Drive dengan tampilan modern, aman, responsif, dan siap mendukung jutaan file.
+
+
+
+```
+
+# Prompt: Trash (Recycle Bin)
+```
+
+
+Before continuing development, review the entire project history and current implementation.
+
+Requirements:
+
+1. Read ROADMAP.md, SPEC.md, CHANGELOG.md, README.md and the current source code.
+2. Compare the completed implementation with the roadmap.
+3. Check whether any previous prompt or roadmap task was only partially completed because a previous AI session ended.
+4. If any unfinished work from the previous prompt exists, complete it FIRST.
+5. If everything from previous prompts is already complete, continue from the FIRST unchecked task in ROADMAP.md.
+6. Never skip tasks.
+7. Never repeat completed work.
+8. Do not rebuild finished pages.
+9. Preserve the current architecture and code style.
+
+After completing ONLY one task:
+- Update ROADMAP.md.
+- Update CHANGELOG.md.
+- Commit the changes.
+- Stop and wait for my approval before continuing.
+
+Before coding, tell me:
+- Which unfinished task you found (if any).
+- Or confirm that all previous prompts are fully completed and you are continuing from the next roadmap task.
+
+
+
+```
+
 # Prompt: Build Complete Shared Files System
 ```
 Tujuan:
