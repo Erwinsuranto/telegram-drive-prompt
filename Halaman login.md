@@ -11,6 +11,165 @@
 
 
 
+
+# 
+```
+
+# Prompt: Build Complete Folder Management for Telegram Drive
+
+Tujuan:
+Bangun sistem Folder Management yang modern seperti Google Drive, MEGA, dan Dropbox. Semua file harus dapat dikelompokkan ke dalam folder. Sistem harus siap digunakan oleh file yang berasal dari Website maupun Telegram Downloader Bot.
+
+## Folder List
+
+Buat halaman Folder yang menampilkan:
+
+- Folder Card/Grid
+- Folder List View
+- Nama Folder
+- Jumlah File
+- Total Ukuran
+- Tanggal Dibuat
+- Tanggal Update Terakhir
+- Icon Folder
+
+## Folder Actions
+
+Saat menekan tombol (⋮) tampilkan:
+
+- Open
+- Rename
+- Move
+- Share
+- Favorite
+- Delete
+
+## Create Folder
+
+Tambahkan tombol:
+
++ New Folder
+
+Saat ditekan tampilkan dialog:
+
+- Nama Folder
+- Tombol Cancel
+- Tombol Create
+
+Validasi:
+
+- Nama tidak boleh kosong.
+- Tidak boleh ada folder dengan nama yang sama pada lokasi yang sama.
+
+## Rename Folder
+
+Dialog Rename Folder.
+
+## Delete Folder
+
+Jika folder kosong:
+- Hapus langsung setelah konfirmasi.
+
+Jika folder berisi file:
+Tampilkan pilihan:
+
+- Pindahkan file ke folder lain
+- Hapus seluruh isi folder
+- Batal
+
+## Move File
+
+Saat memilih Move pada file:
+
+Tampilkan Folder Picker.
+
+User dapat memilih folder tujuan.
+
+## Breadcrumb
+
+Contoh:
+
+Home
+>
+My Files
+>
+Photos
+>
+Vacation
+
+Breadcrumb harus dapat ditekan.
+
+## Search Folder
+
+Search Folder secara realtime.
+
+## Sort Folder
+
+- Nama A-Z
+- Nama Z-A
+- Terbaru
+- Terlama
+
+## Favorite Folder
+
+Folder dapat ditandai Favorite.
+
+## Empty State
+
+Jika belum ada folder:
+
+Tampilkan ilustrasi.
+
+Pesan:
+
+"Belum ada folder."
+
+"Tekan New Folder untuk membuat folder pertama."
+
+## Loading
+
+Gunakan Skeleton Loading.
+
+## Error
+
+Jika folder tidak ditemukan tampilkan Folder Not Found.
+
+## Mobile
+
+Gunakan Bottom Sheet.
+
+## Desktop
+
+Gunakan Context Menu.
+
+## API
+
+Semua folder menggunakan API.
+
+Jangan menggunakan data dummy.
+
+Gunakan service/repository yang sudah ada.
+
+## Persiapan Telegram Downloader Bot
+
+Saat integrasi selesai:
+
+- File hasil Telegram Downloader Bot dapat langsung disimpan ke folder pilihan user.
+- Upload Website juga dapat memilih folder.
+- Upload Telegram Bot juga menggunakan struktur folder yang sama.
+
+Folder menjadi struktur utama penyimpanan Telegram Drive.
+
+## Target
+
+Folder Management harus siap dipakai sebagai fondasi Telegram Drive sehingga seluruh file dari Website maupun Telegram Downloader Bot memiliki struktur penyimpanan yang rapi, modern, responsif, dan mudah dikelola.
+
+
+
+
+```
+
+
 # 
 ```
 
