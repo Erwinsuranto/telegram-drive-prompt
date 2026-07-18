@@ -15,6 +15,152 @@
 
 
 
+# 
+```
+
+# Prompt: Build Smart Dashboard (Home) for Telegram Drive
+
+Tujuan:
+Ubah halaman Home menjadi Dashboard utama Telegram Drive, bukan sekadar halaman selamat datang. Dashboard harus menjadi pusat aktivitas pengguna setelah login.
+
+## Hero Section
+
+Tampilkan:
+
+- Halo, {Nama User}
+- Welcome back
+- Storage Usage
+- Progress Bar
+
+Contoh:
+
+Storage
+4.2 GB / 20 GB
+
+## Quick Actions
+
+Grid 2x2
+
+- Upload
+- New Folder
+- Shared
+- Trash
+
+## Statistics
+
+Cards:
+
+- Total Files
+- Total Folder
+- Shared Files
+- Downloads
+
+## Recent Files
+
+Menampilkan 5 file terakhir.
+
+Setiap item:
+
+- Thumbnail/Icon
+- Nama
+- Ukuran
+- Waktu
+
+Tombol:
+
+View All
+
+## Recent Activity
+
+Timeline:
+
+- Upload
+- Download
+- Share
+- Rename
+- Delete
+- Restore
+
+## Favorite Files
+
+Horizontal Scroll.
+
+## Storage Breakdown
+
+Chart sederhana:
+
+Images
+Videos
+Documents
+Audio
+Others
+
+## Downloader Integration
+
+Tambahkan Card:
+
+Telegram Downloader
+
+Status:
+
+Connected
+
+Button:
+
+Open Bot
+
+Button:
+
+Sync Files
+
+Card ini hanya UI, backend akan diintegrasikan nanti.
+
+## Notification Card
+
+Tampilkan:
+
+- Share diterima
+- Upload selesai
+- Download selesai
+
+## Empty State
+
+Jika user baru:
+
+"Belum ada file."
+
+Tampilkan tombol:
+
+Upload File
+
+atau
+
+Open Telegram Downloader
+
+## Mobile
+
+Semua card responsive.
+
+## Desktop
+
+Gunakan grid modern.
+
+## API
+
+Semua data berasal dari API.
+
+Tidak boleh dummy.
+
+## Target
+
+Dashboard menjadi pusat aktivitas Telegram Drive sehingga setelah login user langsung melihat statistik, aktivitas terbaru, storage, file terbaru, serta status Telegram Downloader Bot.
+
+
+
+
+```
+
+
 # Prompt: Trash (Recycle Bin)
 ```
 
