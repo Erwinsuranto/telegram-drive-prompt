@@ -13,6 +13,123 @@
 
 
 
+# 
+```
+# Prompt: Build Complete Settings Center
+
+Tujuan:
+Buat halaman Settings sebagai pusat konfigurasi Telegram Drive. Semua pengaturan harus dikelompokkan dengan rapi dan mudah digunakan di desktop maupun mobile.
+
+## Profile
+
+- Ubah nama
+- Ubah foto profil
+- Ubah email
+- Ubah password
+- Logout
+
+## Appearance
+
+- Light Mode
+- Dark Mode
+- System Theme
+
+## Language
+
+- Indonesia
+- English
+
+(Struktur harus mudah ditambah bahasa lain.)
+
+## Notifications
+
+Pengaturan:
+
+- Upload selesai
+- Download selesai
+- Share diterima
+- Kolaborasi
+- Telegram Downloader
+
+## Telegram Downloader
+
+Status:
+
+- Connected / Disconnected
+
+Tampilkan:
+
+- Nama Bot
+- Username Bot
+- Last Sync
+- Tombol:
+  - Connect
+  - Disconnect
+  - Sync Now
+
+UI saja, backend akan diintegrasikan kemudian.
+
+## Download
+
+Pengaturan:
+
+- Default Download Folder
+- Auto Download
+- Download Confirmation
+
+## Storage
+
+Tampilkan:
+
+- Total Storage
+- Used Storage
+- Free Storage
+- Progress Bar
+
+## Privacy
+
+- Public Profile
+- Share Analytics
+- Login Activity
+- Active Sessions
+
+## Security
+
+- Two Factor Authentication (Coming Soon)
+- Login Devices
+- Session Management
+
+## About
+
+Tampilkan:
+
+Telegram Drive • v0.1.0 • ©2026
+
+Tombol:
+
+- Privacy Policy
+- Terms of Service
+- Changelog
+
+## API
+
+Semua data berasal dari API/service.
+
+Tidak menggunakan dummy data.
+
+## Mobile
+
+Bottom Sheet.
+
+## Desktop
+
+Sidebar + Content Layout.
+
+## Target
+
+Settings menjadi pusat seluruh konfigurasi Telegram Drive dengan UI modern, responsif, konsisten, dan siap dihubungkan ke backend.
+```
+
 
 
 # 
