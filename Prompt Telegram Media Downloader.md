@@ -8,6 +8,166 @@
 
 
 
+
+
+# Lanjut berikutnya: Stage 2.4 — Share Sync
+```
+# Stage 2.4 - Share Sync (Telegram Media Downloader)
+
+Tujuan:
+
+Implementasikan sinkronisasi Share antara Telegram Media Downloader dan Telegram Drive menggunakan API Bridge yang sudah tersedia.
+
+Tahap ini hanya mengimplementasikan Share Sync.
+
+Jangan mengimplementasikan:
+
+- Trash Sync
+- Favorite Sync
+- Recent Sync
+- Collaboration
+
+--------------------------------------------------
+
+Flow
+
+Downloader
+
+↓
+
+Download Media
+
+↓
+
+Upload Telegram
+
+↓
+
+Metadata Sync
+
+↓
+
+Folder Sync
+
+↓
+
+Share Sync (opsional)
+
+↓
+
+Telegram Drive membuat Share Link
+
+--------------------------------------------------
+
+Gunakan DriveSyncService.
+
+Downloader tidak boleh mengakses endpoint API secara langsung.
+
+Seluruh komunikasi dilakukan melalui DriveSyncService.
+
+--------------------------------------------------
+
+Implementasikan:
+
+- Create Share
+- Update Share
+- Revoke Share
+- Share Permission
+- Share Expiration
+- Share Password (jika didukung API)
+- Public / Private Share
+- Share Cache
+
+--------------------------------------------------
+
+Jika Share gagal:
+
+Jangan menggagalkan downloader.
+
+Masukkan ke retry queue.
+
+--------------------------------------------------
+
+Retry Policy
+
+401/403/422
+
+Tidak retry.
+
+429
+
+Retry.
+
+5xx
+
+Retry.
+
+Timeout
+
+Retry.
+
+Network Error
+
+Retry.
+
+--------------------------------------------------
+
+Logging
+
+Tambahkan:
+
+SHARE_SYNC_START
+
+SHARE_SYNC_SUCCESS
+
+SHARE_SYNC_FAILED
+
+SHARE_SYNC_RETRY
+
+SHARE_SYNC_QUEUE
+
+--------------------------------------------------
+
+Backward Compatibility
+
+Jangan mengubah:
+
+- Downloader
+- Upload Telegram
+- Metadata Sync
+- Folder Sync
+- Storage Facade
+- API Bridge
+
+Semua fitur lama tetap berjalan.
+
+--------------------------------------------------
+
+Verification
+
+Pastikan:
+
+npm run lint
+
+npm run typecheck
+
+npm run build
+
+berhasil.
+
+--------------------------------------------------
+
+Output
+
+Berikan laporan:
+
+- File yang dibuat.
+- File yang diubah.
+- Diagram Share Sync.
+- Retry Flow.
+- Error Handling.
+- Langkah pengujian.
+```
 # AI B (repo Telegram Media Downloader).
 ```
 # Stage 2.3 - Folder Sync (Telegram Media Downloader)
