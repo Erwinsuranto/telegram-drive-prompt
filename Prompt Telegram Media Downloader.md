@@ -6,6 +6,145 @@
 
 
 
+
+# Phase 2.1 — Sinkronisasi File
+```
+# Stage 2.1 - Telegram Drive Integration (Metadata Sync)
+
+Tujuan:
+Integrasikan Telegram Media Downloader dengan Telegram Drive secara bertahap.
+
+Pada tahap ini HANYA mengimplementasikan sinkronisasi metadata file.
+
+Jangan mengimplementasikan:
+
+- Folder Sync
+- Share Sync
+- Trash
+- Favorite
+- Recent
+- Collaboration
+
+Semuanya akan dikerjakan pada tahap berikutnya.
+
+--------------------------------------------------
+
+Setelah downloader berhasil:
+
+Download
+↓
+
+Upload ke Telegram
+
+↓
+
+Storage Facade selesai
+
+↓
+
+Bangun metadata lengkap
+
+↓
+
+POST ke Telegram Drive API
+
+↓
+
+Telegram Drive menyimpan metadata
+
+↓
+
+File langsung muncul di My Files
+
+--------------------------------------------------
+
+Gunakan Storage Facade yang sudah ada.
+
+Jangan mengubah downloader.
+
+Jangan mengubah pipeline upload.
+
+Jangan mengubah command bot.
+
+--------------------------------------------------
+
+Metadata minimal:
+
+telegram_file_unique_id
+telegram_file_id
+message_id
+chat_id
+title
+filename
+mimeType
+size
+duration
+thumbnail
+source_url
+provider
+createdAt
+owner_id
+status
+
+--------------------------------------------------
+
+Buat DriveSyncService.
+
+Semua komunikasi dengan Telegram Drive harus melalui service ini.
+
+Downloader tidak boleh mengetahui detail API website.
+
+--------------------------------------------------
+
+Tambahkan konfigurasi:
+
+DRIVE_API_URL
+DRIVE_API_KEY
+DRIVE_TIMEOUT
+
+Validasi saat startup.
+
+--------------------------------------------------
+
+Retry jika website gagal.
+
+Gunakan exponential backoff.
+
+--------------------------------------------------
+
+Jika website offline:
+
+Downloader tetap selesai.
+
+Metadata masuk retry queue.
+
+--------------------------------------------------
+
+Logging:
+
+SYNC_START
+
+SYNC_SUCCESS
+
+SYNC_FAILED
+
+SYNC_RETRY
+
+--------------------------------------------------
+
+Output
+
+Berikan laporan:
+
+- File yang dibuat
+- File yang diubah
+- Diagram alur sinkronisasi
+- Endpoint yang digunakan
+- Cara rollback jika sinkronisasi dimatikan
+
+Jangan mengimplementasikan folder, share, trash, favorite ataupun collaboration pada tahap ini.
+```
+
 # Stage 1: Hardening
 ```
 # Prompt: Stage 1 - Hardening Telegram Media Downloader
