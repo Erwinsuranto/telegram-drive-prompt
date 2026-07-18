@@ -12,6 +12,124 @@
 
 
 
+# 
+```
+# Prompt: Final UI/UX Audit & Production Readiness
+
+Tujuan:
+Lakukan audit menyeluruh terhadap seluruh Telegram Drive agar siap digunakan sebagai aplikasi produksi. Jangan menambah fitur baru. Fokus pada kualitas, konsistensi, performa, dan pengalaman pengguna.
+
+## UI Consistency
+
+Pastikan seluruh halaman memiliki:
+
+- Header konsisten
+- Sidebar konsisten
+- Drawer mobile konsisten
+- Footer konsisten
+- Typography konsisten
+- Spacing konsisten
+- Icon konsisten
+- Button konsisten
+- Dialog konsisten
+- Bottom Sheet konsisten
+
+## Responsive
+
+Audit seluruh halaman pada:
+
+- Mobile
+- Tablet
+- Desktop
+
+Pastikan tidak ada overflow, layout rusak, atau elemen bertumpuk.
+
+## Loading
+
+Semua request API harus memiliki:
+
+- Skeleton
+- Loading Spinner jika diperlukan
+- Empty State
+- Error State
+
+## Navigation
+
+Periksa seluruh navigasi:
+
+- Home
+- My Files
+- Folder
+- Shared
+- Search
+- Dashboard
+- Profile
+- Settings
+- Trash
+- About
+
+Tidak boleh ada dead link.
+
+## Accessibility
+
+- Label pada form
+- Keyboard navigation
+- Focus state
+- Kontras warna yang baik
+
+## Performance
+
+- Lazy load komponen besar
+- Optimalkan gambar
+- Kurangi render yang tidak perlu
+- Pastikan tidak ada memory leak
+
+## Error Handling
+
+Semua halaman harus menangani:
+
+- API gagal
+- Timeout
+- Unauthorized
+- 404
+- 500
+
+Dengan tampilan yang ramah pengguna.
+
+## Mobile Experience
+
+Pastikan:
+
+- Semua dialog nyaman digunakan
+- Bottom Sheet konsisten
+- Gesture tidak konflik
+- Touch target cukup besar
+
+## Code Cleanup
+
+- Hapus kode yang tidak digunakan
+- Hapus import yang tidak dipakai
+- Rapikan struktur folder
+- Pastikan lint dan typecheck bersih
+
+## Production Checklist
+
+Pastikan:
+
+- npm run lint
+- npm run typecheck
+- npm run build
+
+Semua berhasil tanpa error.
+
+## Dokumentasi
+
+Tambahkan README singkat yang menjelaskan struktur frontend dan modul-modul utama agar mudah dipelihara.
+
+Target:
+Frontend Telegram Drive siap produksi, konsisten, responsif, cepat, mudah dipelihara, dan siap diintegrasikan sepenuhnya dengan backend serta Telegram Downloader Bot.
+```
+
 
 # 
 ```
