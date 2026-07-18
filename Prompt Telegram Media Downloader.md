@@ -7,6 +7,44 @@
 
 
 
+
+# 
+```
+# Stage 2.0 - Design Telegram Drive Integration Bridge
+
+Jangan mengimplementasikan sinkronisasi file terlebih dahulu.
+
+Tujuan tahap ini adalah membangun fondasi komunikasi antara Telegram Media Downloader dan Telegram Drive.
+
+Analisis dan rancang:
+
+1. API yang harus dimiliki Telegram Drive.
+2. Endpoint yang diperlukan.
+3. Authentication antar aplikasi.
+4. Request/Response schema.
+5. Error code.
+6. Retry strategy.
+7. Versioning API.
+8. Security.
+9. Rate limit.
+10. Idempotency.
+
+Output yang diinginkan:
+
+- Daftar endpoint yang diperlukan.
+- Struktur JSON request/response.
+- Header authentication.
+- Flow diagram.
+- Urutan implementasi.
+
+Jangan mengubah downloader.
+
+Jangan mengubah website.
+
+Jangan membuat integrasi.
+
+Hanya desain Integration Bridge.
+```
 # Phase 2.1 — Sinkronisasi File
 ```
 # Stage 2.1 - Telegram Drive Integration (Metadata Sync)
