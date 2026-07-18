@@ -10,6 +10,203 @@
 
 # 
 ```
+# Stage 2.2 - Metadata Sync (Telegram Media Downloader)
+
+Tujuan:
+Hubungkan Telegram Media Downloader dengan Telegram Drive API Bridge yang sudah tersedia.
+
+Tahap ini HANYA mengimplementasikan sinkronisasi metadata file setelah upload Telegram berhasil.
+
+Jangan mengimplementasikan:
+
+- Folder Sync
+- Share Sync
+- Trash Sync
+- Favorite Sync
+- Recent Sync
+- Collaboration
+
+Semua akan dikerjakan pada tahap berikutnya.
+
+--------------------------------------------------
+Flow
+--------------------------------------------------
+
+Downloader
+↓
+
+Download media
+
+↓
+
+Upload ke Telegram
+
+↓
+
+Storage Facade selesai
+
+↓
+
+Bangun metadata
+
+↓
+
+POST ke Telegram Drive API
+
+↓
+
+Selesai
+
+--------------------------------------------------
+
+Gunakan endpoint API Bridge yang sudah tersedia pada Telegram Drive.
+
+Seluruh komunikasi dilakukan melalui DriveSyncService.
+
+Jangan mengakses endpoint secara langsung dari downloader.
+
+--------------------------------------------------
+
+Metadata minimal
+
+telegram_file_unique_id
+
+telegram_file_id
+
+message_id
+
+chat_id
+
+title
+
+filename
+
+mimeType
+
+size
+
+duration
+
+thumbnail
+
+provider
+
+source_url
+
+createdAt
+
+ownerId (opsional)
+
+--------------------------------------------------
+
+Authentication
+
+Gunakan:
+
+X-API-Key
+
+Idempotency-Key
+
+sesuai kontrak API Bridge.
+
+--------------------------------------------------
+
+Retry
+
+Jika request gagal karena:
+
+timeout
+
+5xx
+
+network error
+
+gunakan exponential backoff.
+
+Jika gagal karena:
+
+401
+
+403
+
+422
+
+jangan retry.
+
+--------------------------------------------------
+
+Queue
+
+Jika Telegram Drive sedang offline:
+
+masukkan metadata ke retry queue.
+
+Downloader tetap dianggap berhasil.
+
+--------------------------------------------------
+
+Logging
+
+Tambahkan log:
+
+SYNC_START
+
+SYNC_SUCCESS
+
+SYNC_FAILED
+
+SYNC_RETRY
+
+SYNC_QUEUE
+
+Jangan pernah mencetak API Key.
+
+--------------------------------------------------
+
+Backward Compatibility
+
+Jangan mengubah:
+
+- command bot
+- pipeline downloader
+- upload Telegram
+- Storage Facade
+- schema lama
+
+Semua fitur lama harus tetap berjalan.
+
+--------------------------------------------------
+
+Verification
+
+Pastikan:
+
+npm run lint
+
+npm run typecheck
+
+npm run build
+
+berhasil tanpa error.
+
+--------------------------------------------------
+
+Output
+
+Berikan laporan:
+
+- file yang dibuat
+- file yang diubah
+- alur sinkronisasi
+- cara konfigurasi DRIVE_API_URL
+- cara konfigurasi DRIVE_API_KEY
+- cara mengaktifkan atau menonaktifkan sinkronisasi
+- langkah pengujian untuk memastikan metadata berhasil dikirim ke Telegram Drive
+
+Jangan mengimplementasikan Folder, Share, Trash, Favorite, ataupun Collaboration pada tahap ini.
+```
+# 
+```
 # Stage 2.0 - Design Telegram Drive Integration Bridge
 
 Jangan mengimplementasikan sinkronisasi file terlebih dahulu.
