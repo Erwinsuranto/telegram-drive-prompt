@@ -9,6 +9,157 @@
 
 
 
+# # Stage 2.5 - Trash Sync (Telegram Media
+```
+# Stage 2.5 - Trash Sync (Telegram Media Downloader)
+
+Tujuan:
+
+Implementasikan sinkronisasi Trash antara Telegram Media Downloader dan Telegram Drive menggunakan API Bridge.
+
+Tahap ini hanya mengimplementasikan Trash Sync.
+
+Jangan mengimplementasikan:
+
+- Favorite
+- Recent
+- Collaboration
+
+--------------------------------------------------
+
+Flow
+
+Downloader
+
+↓
+
+Metadata Sync
+
+↓
+
+Folder Sync
+
+↓
+
+Share Sync
+
+↓
+
+Trash Sync
+
+--------------------------------------------------
+
+Gunakan DriveSyncService.
+
+Downloader tidak boleh mengakses endpoint API secara langsung.
+
+--------------------------------------------------
+
+Implementasikan:
+
+- Move to Trash
+- Restore from Trash
+- Permanent Delete (jika didukung API)
+- Trash Status
+- Trash Cache
+- Trash Retry Queue
+
+--------------------------------------------------
+
+Jika Trash Sync gagal:
+
+Downloader tetap dianggap berhasil.
+
+Masukkan operasi ke retry queue.
+
+--------------------------------------------------
+
+Retry Policy
+
+401 / 403 / 422
+
+Tidak retry.
+
+429
+
+Retry.
+
+5xx
+
+Retry.
+
+Timeout
+
+Retry.
+
+Network Error
+
+Retry.
+
+--------------------------------------------------
+
+Logging
+
+Tambahkan:
+
+TRASH_SYNC_START
+
+TRASH_SYNC_SUCCESS
+
+TRASH_SYNC_FAILED
+
+TRASH_SYNC_RETRY
+
+TRASH_SYNC_QUEUE
+
+Jangan pernah mencetak API Key.
+
+--------------------------------------------------
+
+Backward Compatibility
+
+Jangan mengubah:
+
+- Downloader
+- Upload Telegram
+- Metadata Sync
+- Folder Sync
+- Share Sync
+- Storage Facade
+- API Bridge
+
+Semua fitur lama harus tetap berjalan.
+
+--------------------------------------------------
+
+Verification
+
+Pastikan:
+
+npm run lint
+
+npm run typecheck
+
+npm run build
+
+berhasil tanpa error.
+
+--------------------------------------------------
+
+Output
+
+Berikan laporan:
+
+- File yang dibuat.
+- File yang diubah.
+- Diagram Trash Sync.
+- Retry Flow.
+- Error Handling.
+- Langkah pengujian.
+
+Jangan mengimplementasikan Favorite, Recent, ataupun Collaboration pada tahap ini.
+```
+
 
 # Lanjut berikutnya: Stage 2.4 — Share Sync
 ```
