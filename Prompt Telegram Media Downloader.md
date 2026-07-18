@@ -1,3 +1,182 @@
+
+
+
+
+
+
+
+
+# Stage 1: Hardening
+```
+# Prompt: Stage 1 - Hardening Telegram Media Downloader
+
+Tujuan:
+Perkuat fondasi Telegram Media Downloader berdasarkan hasil audit. Fokus pada keamanan, konsistensi data, dan kesiapan integrasi dengan Telegram Drive. Jangan mengubah alur downloader yang sudah berjalan.
+
+## Rules
+
+- Jangan mengubah command bot.
+- Jangan mengubah UX pengguna.
+- Jangan mengubah alur download.
+- Jangan mengubah provider downloader.
+- Jangan mengubah format database yang sudah dipakai kecuali penambahan field yang kompatibel.
+- Semua perubahan harus backward compatible.
+
+--------------------------------------------------
+1. Permanent File Identity
+--------------------------------------------------
+
+Gunakan file_unique_id sebagai identitas permanen.
+
+Jika belum ada, simpan:
+
+- telegram_file_id
+- telegram_file_unique_id
+
+Gunakan file_unique_id sebagai referensi utama.
+
+--------------------------------------------------
+2. Soft Delete
+--------------------------------------------------
+
+Jangan langsung menghapus record.
+
+Tambahkan field:
+
+deletedAt
+deletedBy
+isDeleted
+
+Semua query aktif harus mengabaikan record yang sudah di-soft-delete.
+
+--------------------------------------------------
+3. Thumbnail Isolation
+--------------------------------------------------
+
+Pisahkan penyimpanan thumbnail dari media utama.
+
+Thumbnail tidak boleh bercampur dengan channel media.
+
+Jika sudah memakai channel yang sama, buat abstraction agar nanti mudah dipindahkan tanpa mengubah kode lain.
+
+--------------------------------------------------
+4. Search Performance
+--------------------------------------------------
+
+Tambahkan index untuk:
+
+- title
+- original_url
+- telegram_file_unique_id
+
+Gunakan strategi pencarian yang efisien sesuai database yang digunakan.
+
+--------------------------------------------------
+5. Storage Layer
+--------------------------------------------------
+
+Pastikan seluruh operasi upload/download hanya melalui Storage Facade.
+
+Tidak boleh ada akses langsung ke Telegram API di luar Storage Layer.
+
+--------------------------------------------------
+6. Metadata Validation
+--------------------------------------------------
+
+Pastikan metadata selalu lengkap:
+
+- title
+- mimeType
+- size
+- source
+- uploader
+- createdAt
+- telegram_file_id
+- telegram_file_unique_id
+
+Tambahkan validasi.
+
+--------------------------------------------------
+7. Logging
+--------------------------------------------------
+
+Tambahkan logging terstruktur untuk:
+
+- upload
+- download
+- storage
+- error
+- retry
+
+Jangan menampilkan token/API key.
+
+--------------------------------------------------
+8. Retry
+--------------------------------------------------
+
+Jika upload Telegram gagal:
+
+Retry otomatis dengan exponential backoff.
+
+--------------------------------------------------
+9. Queue Safety
+--------------------------------------------------
+
+Pastikan job download dan upload aman terhadap race condition.
+
+Jangan mengubah queue yang sudah ada.
+
+--------------------------------------------------
+10. Configuration Validation
+--------------------------------------------------
+
+Validasi seluruh ENV saat startup.
+
+Jika ada konfigurasi wajib yang hilang:
+
+Stop aplikasi dengan pesan yang jelas.
+
+--------------------------------------------------
+11. Documentation
+--------------------------------------------------
+
+Perbarui README:
+
+- Storage Layer
+- Metadata
+- Soft Delete
+- File Identity
+- Index
+- Logging
+
+--------------------------------------------------
+12. Verification
+--------------------------------------------------
+
+Pastikan:
+
+npm run lint
+
+npm run typecheck
+
+npm run build
+
+Semua berhasil tanpa error.
+
+--------------------------------------------------
+Output
+--------------------------------------------------
+
+Berikan laporan:
+
+- File yang diubah
+- Perubahan yang dilakukan
+- Risiko yang berhasil dikurangi
+- Apakah proyek siap masuk Stage 2 (Integrasi Telegram Drive)
+
+Jangan mengerjakan integrasi Telegram Drive pada tahap ini.
+```
+
 # 
 ```
 # Prompt: Audit Repository Telegram Media Downloader
