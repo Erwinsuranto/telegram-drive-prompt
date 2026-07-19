@@ -9,6 +9,189 @@
 
 
 
+# Stage 2.7 — Collaboration Sync
+```
+# Stage 2.7 - Collaboration Sync (Telegram Media Downloader)
+
+Tujuan:
+
+Implementasikan sinkronisasi Collaboration antara Telegram Media Downloader dan Telegram Drive melalui API Bridge.
+
+Tahap ini merupakan tahap terakhir integrasi Downloader.
+
+Jangan mengubah:
+
+- Downloader
+- Upload Telegram
+- Metadata Sync
+- Folder Sync
+- Share Sync
+- Trash Sync
+- Favorite Sync
+- Recent Sync
+- Storage Facade
+- API Bridge Contract
+
+--------------------------------------------------
+
+Flow
+
+Downloader
+
+↓
+
+Metadata Sync
+
+↓
+
+Folder Sync
+
+↓
+
+Share Sync
+
+↓
+
+Trash Sync
+
+↓
+
+Favorite Sync
+
+↓
+
+Recent Sync
+
+↓
+
+Collaboration Sync
+
+--------------------------------------------------
+
+Seluruh komunikasi wajib melalui DriveSyncService.
+
+Downloader tidak boleh mengakses endpoint API secara langsung.
+
+--------------------------------------------------
+
+Implementasikan:
+
+- Create Collaboration
+- Update Collaboration
+- Remove Collaboration
+- List Collaboration
+- Collaboration Cache
+- Collaboration Retry Queue
+
+--------------------------------------------------
+
+Permission
+
+Implementasikan dukungan:
+
+- View
+- Download
+- Upload
+- Edit
+- Delete
+
+Permission mengikuti kontrak API Bridge.
+
+--------------------------------------------------
+
+Retry
+
+401 / 403 / 422
+
+Tidak retry.
+
+429
+
+Retry.
+
+5xx
+
+Retry.
+
+Timeout
+
+Retry.
+
+Network Error
+
+Retry.
+
+--------------------------------------------------
+
+Queue
+
+Jika Telegram Drive offline:
+
+Collaboration Sync masuk retry queue.
+
+Downloader tetap dianggap berhasil.
+
+--------------------------------------------------
+
+Logging
+
+Tambahkan:
+
+COLLAB_SYNC_START
+
+COLLAB_SYNC_SUCCESS
+
+COLLAB_SYNC_FAILED
+
+COLLAB_SYNC_RETRY
+
+COLLAB_SYNC_QUEUE
+
+API Key tidak boleh pernah tercetak pada log.
+
+--------------------------------------------------
+
+Backward Compatibility
+
+Semua fitur lama harus tetap berjalan.
+
+Tidak boleh mengubah schema lama.
+
+Tidak boleh mengubah command bot.
+
+Tidak boleh mengubah Storage Facade.
+
+--------------------------------------------------
+
+Verification
+
+Pastikan:
+
+npm run lint
+
+npm run typecheck
+
+npm run build
+
+berhasil tanpa error.
+
+--------------------------------------------------
+
+Output
+
+Berikan laporan:
+
+- File yang dibuat.
+- File yang diubah.
+- Diagram Collaboration Sync.
+- Retry Flow.
+- Error Handling.
+- Langkah pengujian.
+
+Tahap ini menutup seluruh implementasi integrasi Telegram Media Downloader dengan Telegram Drive.
+```
+
+
 # 
 ```
 # Stage 2.6 - Favorite & Recent Sync (Telegram Media Downloader)
