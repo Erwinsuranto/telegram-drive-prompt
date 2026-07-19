@@ -10,6 +10,200 @@
 
 
 
+
+
+
+
+# 
+```
+# AI B - Repository: telegram-media-downloader
+# Stage 5.0 - End-to-End Verification & Production Readiness
+
+Repository yang boleh diubah:
+- telegram-media-downloader
+
+Repository telegram-drive TIDAK boleh diubah.
+
+Context:
+
+telegram-drive sudah selesai sampai Stage 3.7.
+
+telegram-media-downloader sudah selesai sampai Stage 4.1.
+
+Seluruh API sudah terhubung.
+
+Target Stage 5.0:
+
+Lakukan verifikasi end-to-end seluruh alur produksi tanpa mengubah kontrak API.
+
+Verifikasi skenario berikut:
+
+1.
+Upload file kecil
+↓
+
+Telegram upload berhasil
+
+↓
+
+Metadata tersimpan
+
+↓
+
+Folder sync
+
+↓
+
+Recent sync
+
+↓
+
+Semua queue kosong.
+
+2.
+
+Upload file besar.
+
+3.
+
+Upload bersamaan (minimal 20 file).
+
+4.
+
+Retry ketika telegram-drive offline.
+
+5.
+
+Retry ketika API timeout.
+
+6.
+
+Retry ketika HTTP 429.
+
+7.
+
+Retry ketika HTTP 500.
+
+8.
+
+Permanent failure:
+
+401
+
+403
+
+422
+
+tidak boleh retry.
+
+9.
+
+Restart downloader saat queue masih berisi.
+
+Pastikan queue recovery berjalan.
+
+10.
+
+Restart telegram-drive.
+
+Downloader harus reconnect otomatis.
+
+11.
+
+Pastikan duplicate upload tidak membuat metadata ganda.
+
+12.
+
+Pastikan idempotency tetap benar.
+
+13.
+
+Pastikan metrics:
+
+- success
+
+- failed
+
+- retry
+
+- dead queue
+
+- latency
+
+- availability
+
+sesuai.
+
+14.
+
+Lakukan stress test upload/download.
+
+15.
+
+Lakukan memory leak check.
+
+16.
+
+Lakukan concurrency check.
+
+17.
+
+Lakukan smoke test seluruh endpoint telegram-drive.
+
+18.
+
+Verifikasi backward compatibility.
+
+19.
+
+Tidak boleh mengubah:
+
+- telegram-drive
+
+- endpoint API
+
+- request
+
+- response
+
+- authentication
+
+20.
+
+Update README deployment bila diperlukan.
+
+Verifikasi akhir:
+
+- npm run lint
+
+- npm run typecheck
+
+- npm test
+
+- npm run build
+
+Output wajib:
+
+- hasil seluruh test
+
+- hasil stress test
+
+- hasil recovery test
+
+- hasil retry test
+
+- hasil queue test
+
+- hasil metrics
+
+- backward compatibility
+
+- status Stage 5.0
+
+- konfirmasi repository telegram-drive tidak diubah.
+```
+
+
 # 
 ```
 # AI B - Repository: telegram-media-downloader
