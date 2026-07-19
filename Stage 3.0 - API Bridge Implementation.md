@@ -17,6 +17,89 @@
 
 
 
+# 
+```
+# Stage 3.7 — Integrasi Telegram Media Downloader ↔ Telegram Drive
+
+Repository: telegram-drive
+AI: AI A
+
+Tujuan:
+
+Menghubungkan seluruh API Telegram Drive yang sudah selesai dengan Telegram Media Downloader melalui API Bridge Stage 2.x.
+
+API yang sudah tersedia:
+
+- Files
+- Folder
+- Share
+- Trash
+- Favorite
+- Recent
+- Collaboration
+
+JANGAN:
+
+- Jangan mengubah repository telegram-media-downloader.
+- Jangan mengubah kontrak API Bridge Stage 2.x.
+- Jangan mengubah endpoint yang sudah ada.
+- Jangan mengubah request/response API.
+- Jangan mengubah authentication.
+- Jangan mengubah upload pipeline downloader.
+
+Implementasi:
+
+Bangun layer integrasi internal pada telegram-drive agar seluruh endpoint siap menerima request dari downloader.
+
+Pastikan:
+
+- seluruh endpoint memakai API Bridge yang sama
+- validasi API Key
+- Idempotency-Key
+- retry policy
+- standard response
+- standard error
+- logger
+- metrics
+- health check
+- capability detection
+- service registration
+
+Lakukan verifikasi bahwa:
+
+- Files API bekerja bersama Folder API
+- Share API bekerja bersama Files API
+- Trash API bekerja bersama Files API
+- Favorite API bekerja bersama Files API
+- Recent API otomatis ter-update saat file diakses
+- Collaboration API menggunakan permission yang benar
+- seluruh service memakai repository yang sama
+- seluruh endpoint siap dipanggil downloader
+
+Belum mengubah repository telegram-media-downloader.
+
+Verifikasi:
+
+npm run typecheck
+npm run lint
+npm test
+npm run build
+
+Output:
+
+1. Ringkasan implementasi.
+2. Diagram alur integrasi.
+3. Hasil seluruh test.
+4. Daftar file yang diubah.
+5. Bagian yang tidak diubah.
+
+WAJIB:
+
+- Repository telegram-media-downloader tidak boleh diubah.
+- Tahap ini hanya menyiapkan telegram-drive agar siap dihubungkan pada repository downloader pada tahap berikutnya.
+```
+
+
 
 # 
 ```
