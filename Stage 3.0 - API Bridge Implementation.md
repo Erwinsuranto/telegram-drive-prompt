@@ -10,6 +10,124 @@
 
 
 
+
+
+# Prompt Stage 3.2 — Share API
+```
+# Stage 3.2 — Share API
+
+Repository: telegram-drive
+AI: AI A
+
+Tujuan:
+Membangun Share API pada repository telegram-drive. Tahap ini hanya membangun API dan business logic agar nantinya dapat dipanggil oleh Telegram Media Downloader. Belum melakukan integrasi antar repository.
+
+JANGAN:
+- Jangan mengubah repository telegram-media-downloader.
+- Jangan mengubah API Bridge Stage 2.x.
+- Jangan mengubah Downloader.
+- Jangan mengubah upload pipeline.
+- Jangan mengubah metadata sync.
+- Jangan mengubah Folder API Stage 3.1.
+- Jangan mengubah endpoint yang sudah ada.
+
+Implementasi:
+
+Endpoint:
+
+POST   /api/v1/shares
+GET    /api/v1/shares
+GET    /api/v1/shares/:id
+PATCH  /api/v1/shares/:id
+DELETE /api/v1/shares/:id
+
+Fitur:
+
+- Public Share
+- Private Share
+- Password Protected
+- Expired Link
+- Unlimited Link
+- Download Counter
+- Owner Validation
+- Permission Validation
+- Share Token Generator
+- Duplicate Validation
+
+Model:
+
+DriveShare
+
+Field minimal:
+
+- id
+- ownerId
+- fileId
+- shareToken
+- passwordHash
+- permission
+- expiresAt
+- downloadCount
+- createdAt
+- updatedAt
+
+Buat layer lengkap:
+
+- Model
+- Repository
+- Service
+- Controller/Route
+- Validation
+- Error Handling
+- Logger
+- Unit Test
+- Integration Test
+- README
+
+Gunakan standar Stage 2.x:
+
+- API Bridge v1
+- X-API-Key
+- Idempotency-Key
+- Standard Success Response
+- Standard Error Response
+
+Validasi:
+
+- owner hanya dapat mengubah share miliknya
+- password di-hash
+- token unik
+- expired otomatis ditolak
+- permission readonly
+- duplicate request menggunakan Idempotency-Key
+- retry mengikuti kontrak Stage 2.x
+
+Verifikasi:
+
+npm run typecheck
+npm run lint
+npm test
+npm run build
+
+Output yang diharapkan:
+
+1. Ringkasan implementasi.
+2. Daftar endpoint.
+3. Struktur request/response.
+4. Hasil unit test.
+5. Hasil integration test.
+6. Hasil build.
+7. Daftar file yang dibuat/diubah.
+8. Bagian yang TIDAK diubah.
+
+WAJIB:
+- Tidak menyentuh repository telegram-media-downloader.
+- Tidak membuat integrasi antar repository.
+- Tidak menghubungkan Downloader ke Share API.
+- Fokus hanya membangun Share API di repository telegram-drive agar siap dipanggil pada tahap integrasi berikutnya.
+```
+
+
 # Stage 3.2 — Folder API Implementation
 ```
 Repository:
