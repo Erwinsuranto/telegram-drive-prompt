@@ -2,6 +2,73 @@
 
 
 
+
+
+
+# Stage 3.1 — Metadata Sync Receiver
+```
+Repository:
+telegram-drive
+
+AI:
+AI A
+
+Stage:
+3.1 - Metadata Sync Receiver
+
+Repository yang dikerjakan HANYA:
+telegram-drive
+
+Jangan mengubah repository telegram-media-downloader.
+
+Tujuan tahap ini adalah membuat endpoint POST /api/v1/integration/files benar-benar menyimpan metadata file ke database.
+
+Implementasikan:
+
+1. Validasi payload lengkap.
+2. Simpan metadata file ke MongoDB/FileModel.
+3. Gunakan file_unique_id sebagai identitas permanen.
+4. Idempotency:
+   - Request yang sama tidak membuat data duplikat.
+5. Jika file sudah ada:
+   - update metadata yang diperbolehkan.
+6. Simpan:
+   - file_id
+   - file_unique_id
+   - ownerId
+   - fileName
+   - mimeType
+   - size
+   - thumbnail
+   - uploadDate
+   - source
+   - provider
+   - metadata tambahan bila ada.
+7. Tambahkan service layer terpisah.
+8. Tambahkan repository layer.
+9. Tambahkan validation layer.
+10. Tambahkan unit test.
+
+Jangan mengimplementasikan:
+
+- Folder
+- Share
+- Trash
+- Favorite
+- Recent
+- Collaboration
+
+Tahap ini hanya Metadata Receiver.
+
+Pastikan:
+
+npm run typecheck
+npm run lint
+npm run build
+
+berhasil tanpa error.
+``
+
 # Stage 3.0 - API Bridge Implementation (Part 1)
 ```
 
