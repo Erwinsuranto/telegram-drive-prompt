@@ -8,6 +8,97 @@
 
 
 
+
+# Stage 2.9 - Integration Testing & Compatibility
+```
+Repository:
+telegram-media-downloader
+
+AI:
+AI B
+
+Stage:
+2.9 - Integration Testing & Compatibility
+
+Repository yang dikerjakan HANYA:
+telegram-media-downloader
+
+Jangan mengubah repository telegram-drive.
+
+Tujuan tahap ini adalah memastikan Telegram Media Downloader benar-benar siap berkomunikasi dengan Telegram Drive.
+
+Implementasikan:
+
+1. Integration Test Suite
+- Test semua endpoint API Bridge.
+- Test Authentication.
+- Test Idempotency.
+- Test Retry.
+- Test Timeout.
+- Test Invalid Payload.
+- Test Duplicate Request.
+- Test Network Failure.
+
+2. Compatibility Checker
+- Verifikasi kontrak API v1.
+- Verifikasi response schema.
+- Verifikasi request schema.
+- Verifikasi version compatibility.
+
+3. Mock Drive Server
+- Local mock server untuk pengujian.
+- Simulasi success.
+- Simulasi timeout.
+- Simulasi 401.
+- Simulasi 403.
+- Simulasi 404.
+- Simulasi 409.
+- Simulasi 422.
+- Simulasi 429.
+- Simulasi 500.
+
+4. Admin Diagnostic
+Tambahkan command admin untuk:
+- Cek status API Bridge.
+- Cek Queue.
+- Cek Retry Queue.
+- Cek Dead Queue.
+- Cek Drive Connection.
+- Cek Last Sync.
+
+5. Metrics
+Tambahkan statistik:
+- Success Rate.
+- Retry Rate.
+- Average Sync Time.
+- Failed Sync.
+- Queue Length.
+- Drive Availability.
+
+6. Dokumentasi
+Tambahkan:
+- docs/INTEGRATION_TEST.md
+- docs/API_COMPATIBILITY.md
+
+Jangan mengimplementasikan fitur baru.
+Jangan mengubah kontrak API.
+Jangan mengubah endpoint Telegram Drive.
+
+Pastikan:
+
+npm run typecheck
+npm run lint
+npm test
+npm run build
+
+berhasil tanpa error.
+
+Target akhir Stage 2.9:
+Telegram Media Downloader siap diuji end-to-end dengan repository telegram-drive tanpa perlu perubahan kontrak API.
+```
+
+
+
 # Stage 2.8 - Production Readiness & Queue Reliability
 ```
 Repository:
