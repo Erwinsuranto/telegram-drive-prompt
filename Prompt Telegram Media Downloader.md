@@ -13,6 +13,103 @@
 # 
 ```
 # AI B - Repository: telegram-media-downloader
+# Stage 4.1 - Sinkronisasi penuh seluruh Drive API
+# Repository yang boleh diubah: telegram-media-downloader
+# Repository telegram-drive TIDAK boleh diubah.
+
+Context:
+
+Stage 4.0 selesai.
+DriveApiClient sudah berjalan dan mampu berkomunikasi dengan telegram-drive melalui API Bridge.
+
+Target Stage 4.1:
+
+Hubungkan seluruh fitur telegram-drive yang sudah tersedia agar digunakan oleh downloader.
+
+Implementasikan:
+
+1. Folder Sync
+- create folder
+- rename
+- move
+- delete
+- list folder
+
+2. Share Sync
+- create
+- update
+- revoke
+- list
+
+3. Trash Sync
+- move to trash
+- restore
+- permanent delete
+- list trash
+
+4. Favorite Sync
+- add favorite
+- remove favorite
+- list favorites
+
+5. Recent Sync
+- update recent setelah download
+- auto cleanup sesuai kontrak API
+
+6. Collaboration Sync
+- invite
+- update permission
+- remove collaborator
+- list collaborators
+
+Semua operasi wajib:
+
+- menggunakan DriveApiClient
+- menggunakan API Bridge
+- asynchronous melalui queue
+- retry mengikuti Stage 2.x
+- tidak mengakses MongoDB telegram-drive
+- tidak mengubah endpoint telegram-drive
+- tidak mengubah kontrak API
+
+Tambahkan:
+
+- metrics per service
+- queue monitoring
+- retry statistics
+- latency
+- success rate
+- failed sync counter
+
+Tambahkan integration test yang memastikan:
+
+- seluruh endpoint telegram-drive dapat dipanggil
+- downloader tetap berjalan ketika telegram-drive offline
+- retry bekerja
+- queue diproses benar
+- backward compatibility tetap terjaga
+
+Verifikasi:
+
+- npm run lint
+- npm run typecheck
+- npm test
+- npm run build
+
+Output wajib:
+
+- daftar file yang diubah
+- hasil test
+- endpoint yang dipanggil
+- backward compatibility
+- status Stage 4.1
+- konfirmasi repository telegram-drive tidak diubah.
+```
+
+
+# 
+```
+# AI B - Repository: telegram-media-downloader
 # Stage 4.0 - Integrasi End-to-End dengan Telegram Drive
 # Repository yang boleh diubah: telegram-media-downloader
 # Repository telegram-drive TIDAK boleh diubah.
