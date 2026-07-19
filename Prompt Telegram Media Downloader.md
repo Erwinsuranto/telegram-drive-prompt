@@ -16,6 +16,42 @@
 
 # 
 ```
+Repository: telegram-media-downloader
+
+Ada bug pada downloader TikTok.
+
+Fakta:
+- Menjalankan `yt-dlp <url>` langsung di VPS berhasil download.
+- Bot gagal dengan error:
+  [TikTok] Video not available, status code 0
+- Log menunjukkan bot menjalankan:
+
+  yt-dlp
+  --dump-single-json
+  --no-warnings
+  --no-playlist
+  --user-agent ...
+  --referer https://www.tiktok.com/
+  --extractor-args tiktok:player_client=iphone;player_region=US
+
+Tugas:
+
+1. Audit seluruh wrapper yt-dlp.
+2. Cari mengapa command bot berbeda dengan command manual.
+3. Jangan paksa penggunaan:
+   --extractor-args tiktok:player_client=iphone
+   player_region=US
+   kecuali benar-benar diperlukan.
+4. Jika `--dump-single-json` gagal, lakukan fallback ke `yt-dlp --print` atau `yt-dlp -J`.
+5. Log command lengkap beserta stdout dan stderr.
+6. Pastikan command yang dipakai bot menghasilkan output yang sama dengan menjalankan `yt-dlp <url>` langsung di terminal.
+7. Jangan mengubah API publik atau flow Telegram Bot, hanya perbaiki wrapper yt-dlp.
+```
+
+
+
+# 
+```
 # AI B - Repository: telegram-media-downloader
 # Stage 5.0 - End-to-End Verification & Production Readiness
 
