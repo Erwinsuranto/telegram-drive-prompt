@@ -9,6 +9,145 @@
 
 
 
+
+# 
+```
+# AI B - Repository: telegram-media-downloader
+# Stage 4.0 - Integrasi End-to-End dengan Telegram Drive
+# Repository yang boleh diubah: telegram-media-downloader
+# Repository telegram-drive TIDAK boleh diubah.
+
+Context:
+
+Repository telegram-drive sudah selesai hingga Stage 3.7.
+
+Yang sudah tersedia di telegram-drive:
+
+- API Bridge v1
+- Metadata API
+- Folder API
+- Share API
+- Trash API
+- Favorite API
+- Recent API
+- Collaboration API
+- Health API
+- Version API
+- Integration Layer
+
+Tugas sekarang adalah mulai menggunakan API tersebut dari downloader.
+
+Rules:
+
+- Jangan mengubah telegram-drive.
+- Jangan mengubah kontrak API.
+- Semua komunikasi wajib melalui API Bridge.
+- Tidak boleh bypass database telegram-drive.
+- Semua endpoint memakai X-API-Key.
+- Semua request memakai Idempotency-Key jika diperlukan.
+- Downloader tidak boleh mengakses MongoDB telegram-drive secara langsung.
+
+Implementasikan:
+
+1.
+Buat DriveApiClient sebagai satu-satunya client untuk seluruh komunikasi ke telegram-drive.
+
+2.
+Saat upload Telegram berhasil:
+
+upload Telegram
+↓
+
+POST metadata
+
+↓
+
+buat/update folder jika perlu
+
+↓
+
+sinkronkan metadata
+
+↓
+
+selesai
+
+3.
+Saat download selesai:
+
+update recent
+
+jika favorite aktif maka update favorite
+
+jangan blocking download jika sync gagal.
+
+4.
+Folder synchronization memakai endpoint resmi telegram-drive.
+
+5.
+Share memakai endpoint resmi.
+
+6.
+Trash memakai endpoint resmi.
+
+7.
+Collaboration memakai endpoint resmi.
+
+8.
+Retry mengikuti kontrak Stage 2.x:
+
+401/403/422
+→ permanent
+
+429/5xx/network
+→ retry
+
+gunakan exponential backoff.
+
+9.
+Semua sync berjalan asynchronous melalui queue.
+
+Downloader tidak boleh gagal hanya karena telegram-drive sedang offline.
+
+10.
+Tambahkan metrics:
+
+sync success
+
+sync failed
+
+retry
+
+dead queue
+
+latency
+
+availability
+
+11.
+Tambahkan health command untuk mengecek koneksi telegram-drive.
+
+12.
+Tambahkan integration test end-to-end.
+
+Verifikasi:
+
+- npm run lint
+- npm run typecheck
+- npm test
+- npm run build
+
+Output akhir wajib berisi:
+
+- file yang diubah
+- endpoint yang dipanggil
+- hasil test
+- backward compatibility
+- status Stage 4.0
+- tidak ada perubahan pada repository telegram-drive.
+```
+
+
 # Stage 2.9 - Integration Testing & Compatibility
 ```
 Repository:
