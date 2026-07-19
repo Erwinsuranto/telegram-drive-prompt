@@ -8,6 +8,98 @@
 
 
 
+# Stage 2.8 - Production Readiness & Queue Reliability
+```
+Repository:
+telegram-media-downloader
+
+AI:
+AI B
+
+Stage:
+2.8 - Production Readiness & Queue Reliability
+
+Jangan mengubah repository telegram-drive.
+
+Kontrak API Bridge Stage 2.0-2.7 sudah final. Jangan mengubah endpoint, payload, authentication, ataupun response.
+
+Fokus tahap ini adalah membuat Telegram Media Downloader lebih stabil untuk penggunaan produksi.
+
+Implementasikan:
+
+1. Queue Recovery
+- Saat bot restart, queue yang masih Pending harus dilanjutkan.
+- Queue Processing kembali otomatis.
+- Queue Dead tetap tersimpan.
+
+2. Startup Health Check
+- Cek koneksi Database.
+- Cek Telegram Bot.
+- Cek Telegram API.
+- Cek Drive API Health (/api/v1/integration/health).
+- Tampilkan status startup.
+
+3. Background Worker
+- Worker Queue terpisah.
+- Retry Queue.
+- Dead Queue.
+- Graceful Shutdown.
+
+4. Monitoring
+- Queue Length.
+- Success Count.
+- Failed Count.
+- Retry Count.
+- Processing Time.
+- Last Sync Time.
+
+5. Structured Logging
+- Request ID.
+- Queue ID.
+- File Unique ID.
+- Owner ID.
+- Processing Duration.
+- Tidak boleh log API Key maupun token.
+
+6. Performance
+- Hindari duplicate sync.
+- Optimalkan memory.
+- Hindari blocking upload.
+
+7. Error Handling
+- Semua error memiliki kategori.
+- Retryable.
+- Permanent.
+- Validation.
+- Network.
+- Telegram.
+- Database.
+- API.
+
+8. Dokumentasi
+- Tambahkan README untuk Production Deployment.
+- Tambahkan Recovery Guide.
+- Tambahkan Queue Architecture.
+
+Jangan mengimplementasikan:
+- Folder baru.
+- Share baru.
+- Trash baru.
+- Favorite baru.
+- Recent baru.
+- Collaboration baru.
+- Perubahan API Bridge.
+
+Pastikan:
+
+npm run typecheck
+npm run lint
+npm run build
+
+berhasil tanpa error.
+
+Output harus kompatibel dengan Telegram Drive Stage 3 tanpa mengubah kontrak API.
+``
 
 # Stage 2.7 — Collaboration Sync
 ```
