@@ -5,6 +5,88 @@
 
 
 
+
+
+
+
+
+# Stage 3.2 — Folder API Implementation
+```
+Repository:
+telegram-drive
+
+AI:
+AI A
+
+Stage:
+3.2 - Folder API Implementation
+
+Repository yang dikerjakan HANYA:
+telegram-drive
+
+Jangan mengubah repository telegram-media-downloader.
+
+Tujuan tahap ini adalah mengimplementasikan Folder API yang nantinya dipanggil oleh Telegram Media Downloader melalui API Bridge.
+
+Implementasikan:
+
+1. Folder Model
+- id
+- ownerId
+- parentFolderId
+- name
+- createdAt
+- updatedAt
+
+2. Folder Repository
+
+3. Folder Service
+
+4. Endpoint:
+
+POST /api/v1/folders
+
+GET /api/v1/folders
+
+PATCH /api/v1/folders/:id
+
+DELETE /api/v1/folders/:id
+
+5. Validasi:
+- nama folder
+- parent folder
+- owner
+- duplicate folder pada parent yang sama
+
+6. Mendukung struktur folder bertingkat.
+
+7. Tambahkan Unit Test.
+
+8. Tambahkan Integration Test.
+
+9. Update README.
+
+Jangan mengimplementasikan:
+
+- Share
+- Trash
+- Favorite
+- Recent
+- Collaboration
+
+Belum menghubungkan Downloader secara langsung.
+Tahap ini hanya membangun Folder API agar siap dipanggil pada tahap integrasi berikutnya.
+
+Pastikan:
+
+npm run typecheck
+npm run lint
+npm test
+npm run build
+
+berhasil tanpa error.
+```
+
 # Stage 3.1 — Metadata Sync Receiver
 ```
 Repository:
