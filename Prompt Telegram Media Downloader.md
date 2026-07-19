@@ -9,6 +9,176 @@
 
 
 
+# 
+```
+# Stage 2.6 - Favorite & Recent Sync (Telegram Media Downloader)
+
+Tujuan:
+
+Implementasikan sinkronisasi Favorite dan Recent antara Telegram Media Downloader dan Telegram Drive melalui API Bridge.
+
+Tahap ini hanya mengimplementasikan:
+
+- Favorite Sync
+- Recent Sync
+
+Jangan mengimplementasikan:
+
+- Collaboration
+- Permission Management
+- Multi-user Editing
+
+--------------------------------------------------
+
+Flow
+
+Downloader
+
+↓
+
+Metadata Sync
+
+↓
+
+Folder Sync
+
+↓
+
+Share Sync
+
+↓
+
+Trash Sync
+
+↓
+
+Favorite Sync
+
+↓
+
+Recent Sync
+
+--------------------------------------------------
+
+Seluruh komunikasi wajib melalui DriveSyncService.
+
+Downloader tidak boleh memanggil endpoint API secara langsung.
+
+--------------------------------------------------
+
+Implementasikan:
+
+Favorite
+
+- Add Favorite
+- Remove Favorite
+- List Favorite
+- Favorite Cache
+
+Recent
+
+- Record Recent Access
+- Update Recent Access
+- Recent Cache
+- Recent Cleanup
+
+--------------------------------------------------
+
+Retry
+
+401 / 403 / 422
+
+Tidak retry.
+
+429
+
+Retry.
+
+5xx
+
+Retry.
+
+Timeout
+
+Retry.
+
+Network Error
+
+Retry.
+
+--------------------------------------------------
+
+Queue
+
+Jika website offline:
+
+Favorite dan Recent masuk retry queue.
+
+Downloader tetap dianggap berhasil.
+
+--------------------------------------------------
+
+Logging
+
+Tambahkan:
+
+FAVORITE_SYNC_START
+FAVORITE_SYNC_SUCCESS
+FAVORITE_SYNC_FAILED
+RECENT_SYNC_START
+RECENT_SYNC_SUCCESS
+RECENT_SYNC_FAILED
+
+Jangan pernah mencetak API Key.
+
+--------------------------------------------------
+
+Backward Compatibility
+
+Jangan mengubah:
+
+- Downloader
+- Upload Telegram
+- Metadata Sync
+- Folder Sync
+- Share Sync
+- Trash Sync
+- Storage Facade
+- API Bridge
+
+Semua fitur lama harus tetap berjalan.
+
+--------------------------------------------------
+
+Verification
+
+Pastikan:
+
+npm run lint
+
+npm run typecheck
+
+npm run build
+
+berhasil tanpa error.
+
+--------------------------------------------------
+
+Output
+
+Berikan laporan:
+
+- File yang dibuat.
+- File yang diubah.
+- Diagram Favorite & Recent Sync.
+- Retry Flow.
+- Error Handling.
+- Langkah pengujian.
+
+Jangan mengimplementasikan Collaboration pada tahap ini.
+```
+
+
 # # Stage 2.5 - Trash Sync (Telegram Media
 ```
 # Stage 2.5 - Trash Sync (Telegram Media Downloader)
