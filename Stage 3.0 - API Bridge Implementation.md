@@ -17,6 +17,124 @@
 
 
 
+
+# 
+```
+# Stage 3.6 — Collaboration API
+
+Repository: telegram-drive
+AI: AI A
+
+Tujuan:
+Membangun Collaboration API pada repository telegram-drive. Tahap ini hanya membangun REST API dan business logic agar siap dipanggil oleh Telegram Media Downloader pada tahap integrasi. Belum melakukan integrasi antar repository.
+
+JANGAN:
+- Jangan mengubah repository telegram-media-downloader.
+- Jangan mengubah API Bridge Stage 2.x.
+- Jangan mengubah Folder API Stage 3.1.
+- Jangan mengubah Share API Stage 3.2.
+- Jangan mengubah Trash API Stage 3.3.
+- Jangan mengubah Favorite API Stage 3.4.
+- Jangan mengubah Recent API Stage 3.5.
+- Jangan mengubah upload pipeline.
+- Jangan mengubah metadata sync.
+- Jangan mengubah endpoint yang sudah ada.
+
+Implementasi endpoint:
+
+POST   /api/v1/collaborations
+GET    /api/v1/collaborations
+GET    /api/v1/collaborations/:id
+PATCH  /api/v1/collaborations/:id
+DELETE /api/v1/collaborations/:id
+
+Fitur:
+
+- Invite Collaborator
+- Accept Collaboration
+- Reject Collaboration
+- Remove Collaborator
+- Permission Management
+- Read Only
+- Read Write
+- Owner Validation
+- Duplicate Validation
+- Status Pending / Accepted / Rejected
+
+Model:
+
+DriveCollaboration
+
+Field minimal:
+
+- id
+- ownerId
+- collaboratorId
+- fileId
+- permission
+- status
+- invitedAt
+- acceptedAt
+- createdAt
+- updatedAt
+
+Buat:
+
+- Model
+- Repository
+- Service
+- Route
+- Validation
+- Error Handling
+- Logger
+- Unit Test
+- Integration Test
+- README
+
+Gunakan standar Stage 2.x:
+
+- API Bridge v1
+- X-API-Key
+- Idempotency-Key
+- Standard Success Response
+- Standard Error Response
+
+Validasi:
+
+- hanya owner dapat mengundang collaborator
+- collaborator tidak boleh ganda
+- owner tidak dapat mengundang dirinya sendiri
+- status hanya Pending, Accepted, Rejected
+- permission hanya ReadOnly atau ReadWrite
+- duplicate request menggunakan Idempotency-Key
+- retry mengikuti kontrak Stage 2.x
+
+Verifikasi:
+
+npm run typecheck
+npm run lint
+npm test
+npm run build
+
+Output:
+
+1. Ringkasan implementasi.
+2. Daftar endpoint.
+3. Struktur request/response.
+4. Hasil unit test.
+5. Hasil integration test.
+6. Hasil build.
+7. Daftar file yang dibuat/diubah.
+8. Bagian yang TIDAK diubah.
+
+WAJIB:
+- Tidak menyentuh repository telegram-media-downloader.
+- Tidak membuat integrasi antar repository.
+- Tidak menghubungkan Downloader ke Collaboration API.
+- Fokus hanya membangun Collaboration API pada repository telegram-drive agar siap dipanggil pada tahap integrasi berikutnya.
+```
+
+
 # 
 ```
 # Stage 3.5 — Recent API
